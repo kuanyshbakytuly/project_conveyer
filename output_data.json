@@ -1,0 +1,1778 @@
+{
+    "1": {
+        "camera_id": 1,
+        "potato_id": 1,
+        "type": "potato",
+        "size": "2.5cm 2.45cm",
+        "coordinates": [
+            0,
+            1054,
+            201,
+            1333
+        ],
+        "frame_id": 43,
+        "time": "02:27:02",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "2": {
+        "camera_id": 1,
+        "potato_id": 2,
+        "type": "potato",
+        "size": "3.06cm 2.58cm",
+        "coordinates": [
+            0,
+            704,
+            167,
+            963
+        ],
+        "frame_id": 17,
+        "time": "02:26:55",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "3": {
+        "camera_id": 1,
+        "potato_id": 3,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            0,
+            412,
+            165,
+            667
+        ],
+        "frame_id": 17,
+        "time": "02:26:55",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "4": {
+        "camera_id": 1,
+        "potato_id": 4,
+        "type": "potato",
+        "size": "4.13cm 3.05cm",
+        "coordinates": [
+            0,
+            1478,
+            200,
+            1808
+        ],
+        "frame_id": 20,
+        "time": "02:26:56",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "5": {
+        "camera_id": 1,
+        "potato_id": 5,
+        "type": "potato",
+        "size": "3.39cm 3.16cm",
+        "coordinates": [
+            0,
+            1075,
+            195,
+            1388
+        ],
+        "frame_id": 20,
+        "time": "02:26:56",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "6": {
+        "camera_id": 1,
+        "potato_id": 6,
+        "type": "potato",
+        "size": "3.52cm 3.01cm",
+        "coordinates": [
+            0,
+            911,
+            168,
+            1166
+        ],
+        "frame_id": 18,
+        "time": "02:26:55",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "7": {
+        "camera_id": 1,
+        "potato_id": 7,
+        "type": "potato",
+        "size": "3.02cm 2.64cm",
+        "coordinates": [
+            0,
+            1242,
+            265,
+            1546
+        ],
+        "frame_id": 16,
+        "time": "02:26:55",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "8": {
+        "camera_id": 1,
+        "potato_id": 8,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            0,
+            864,
+            243,
+            1170
+        ],
+        "frame_id": 13,
+        "time": "02:26:54",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "9": {
+        "camera_id": 1,
+        "potato_id": 9,
+        "type": "potato",
+        "size": "3.03cm 2.6cm",
+        "coordinates": [
+            0,
+            1209,
+            138,
+            1449
+        ],
+        "frame_id": 23,
+        "time": "02:26:56",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "10": {
+        "camera_id": 1,
+        "potato_id": 10,
+        "type": "potato",
+        "size": "2.87cm 2.64cm",
+        "coordinates": [
+            0,
+            1359,
+            208,
+            1647
+        ],
+        "frame_id": 45,
+        "time": "02:27:02",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "11": {
+        "camera_id": 1,
+        "potato_id": 11,
+        "type": "potato",
+        "size": "3.51cm 2.92cm",
+        "coordinates": [
+            0,
+            689,
+            164,
+            1013
+        ],
+        "frame_id": 44,
+        "time": "02:27:02",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "12": {
+        "camera_id": 1,
+        "potato_id": 12,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            0,
+            576,
+            280,
+            909
+        ],
+        "frame_id": 12,
+        "time": "02:26:54",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "13": {
+        "camera_id": 1,
+        "potato_id": 13,
+        "type": "potato",
+        "size": "3.2cm 2.46cm",
+        "coordinates": [
+            0,
+            1477,
+            230,
+            1777
+        ],
+        "frame_id": 48,
+        "time": "02:27:03",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "14": {
+        "camera_id": 1,
+        "potato_id": 14,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            0,
+            680,
+            155,
+            965
+        ],
+        "frame_id": 2,
+        "time": "02:26:53",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "15": {
+        "camera_id": 1,
+        "potato_id": 15,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            0,
+            493,
+            273,
+            797
+        ],
+        "frame_id": 4,
+        "time": "02:26:53",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "16": {
+        "camera_id": 1,
+        "potato_id": 16,
+        "type": "potato",
+        "size": "3.11cm 3.01cm",
+        "coordinates": [
+            0,
+            1051,
+            249,
+            1387
+        ],
+        "frame_id": 45,
+        "time": "02:27:02",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "17": {
+        "camera_id": 1,
+        "potato_id": 17,
+        "type": "potato",
+        "size": "4.26cm 3.45cm",
+        "coordinates": [
+            0,
+            273,
+            230,
+            683
+        ],
+        "frame_id": 42,
+        "time": "02:27:02",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "18": {
+        "camera_id": 1,
+        "potato_id": 18,
+        "type": "potato",
+        "size": "2.88cm 2.67cm",
+        "coordinates": [
+            0,
+            916,
+            180,
+            1219
+        ],
+        "frame_id": 49,
+        "time": "02:27:03",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "19": {
+        "camera_id": 1,
+        "potato_id": 19,
+        "type": "potato",
+        "size": "3.19cm 2.75cm",
+        "coordinates": [
+            0,
+            134,
+            148,
+            407
+        ],
+        "frame_id": 50,
+        "time": "02:27:03",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "20": {
+        "camera_id": 1,
+        "potato_id": 20,
+        "type": "potato",
+        "size": "2.92cm 2.68cm",
+        "coordinates": [
+            0,
+            1200,
+            214,
+            1501
+        ],
+        "frame_id": 48,
+        "time": "02:27:03",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "21": {
+        "camera_id": 1,
+        "potato_id": 21,
+        "type": "potato",
+        "size": "2.81cm 2.44cm",
+        "coordinates": [
+            0,
+            850,
+            167,
+            1135
+        ],
+        "frame_id": 57,
+        "time": "02:27:04",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "22": {
+        "camera_id": 1,
+        "potato_id": 22,
+        "type": "potato",
+        "size": "3.27cm 3.1cm",
+        "coordinates": [
+            0,
+            1105,
+            235,
+            1436
+        ],
+        "frame_id": 51,
+        "time": "02:27:03",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "23": {
+        "camera_id": 1,
+        "potato_id": 23,
+        "type": "potato",
+        "size": "3.9cm 3.19cm",
+        "coordinates": [
+            0,
+            1714,
+            253,
+            2088
+        ],
+        "frame_id": 49,
+        "time": "02:27:03",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "24": {
+        "camera_id": 1,
+        "potato_id": 24,
+        "type": "potato",
+        "size": "2.82cm 2.41cm",
+        "coordinates": [
+            0,
+            1086,
+            195,
+            1373
+        ],
+        "frame_id": 59,
+        "time": "02:27:05",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "25": {
+        "camera_id": 1,
+        "potato_id": 25,
+        "type": "potato",
+        "size": "3.03cm 2.91cm",
+        "coordinates": [
+            0,
+            134,
+            164,
+            404
+        ],
+        "frame_id": 54,
+        "time": "02:27:04",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "26": {
+        "camera_id": 1,
+        "potato_id": 26,
+        "type": "potato",
+        "size": "2.63cm 2.52cm",
+        "coordinates": [
+            0,
+            916,
+            219,
+            1188
+        ],
+        "frame_id": 53,
+        "time": "02:27:04",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "27": {
+        "camera_id": 1,
+        "potato_id": 27,
+        "type": "potato",
+        "size": "2.91cm 2.57cm",
+        "coordinates": [
+            0,
+            1163,
+            143,
+            1402
+        ],
+        "frame_id": 55,
+        "time": "02:27:04",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "28": {
+        "camera_id": 1,
+        "potato_id": 28,
+        "type": "potato",
+        "size": "2.97cm 2.41cm",
+        "coordinates": [
+            0,
+            1443,
+            171,
+            1684
+        ],
+        "frame_id": 54,
+        "time": "02:27:04",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "29": {
+        "camera_id": 1,
+        "potato_id": 29,
+        "type": "potato",
+        "size": "3.82cm 3.08cm",
+        "coordinates": [
+            0,
+            1352,
+            216,
+            1725
+        ],
+        "frame_id": 60,
+        "time": "02:27:05",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "30": {
+        "camera_id": 1,
+        "potato_id": 30,
+        "type": "potato",
+        "size": "1.31cm 0.93cm",
+        "coordinates": [
+            0,
+            529,
+            202,
+            820
+        ],
+        "frame_id": 60,
+        "time": "02:27:05",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "31": {
+        "camera_id": 1,
+        "potato_id": 31,
+        "type": "potato",
+        "size": "2.81cm 2.53cm",
+        "coordinates": [
+            0,
+            814,
+            233,
+            1120
+        ],
+        "frame_id": 59,
+        "time": "02:27:05",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "32": {
+        "camera_id": 1,
+        "potato_id": 32,
+        "type": "potato",
+        "size": "2.64cm 2.44cm",
+        "coordinates": [
+            0,
+            271,
+            178,
+            558
+        ],
+        "frame_id": 60,
+        "time": "02:27:05",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "33": {
+        "camera_id": 1,
+        "potato_id": 33,
+        "type": "potato",
+        "size": "2.83cm 2.27cm",
+        "coordinates": [
+            0,
+            340,
+            191,
+            618
+        ],
+        "frame_id": 63,
+        "time": "02:27:06",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "34": {
+        "camera_id": 1,
+        "potato_id": 34,
+        "type": "potato",
+        "size": "3.58cm 2.58cm",
+        "coordinates": [
+            0,
+            877,
+            152,
+            1208
+        ],
+        "frame_id": 63,
+        "time": "02:27:06",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "35": {
+        "camera_id": 1,
+        "potato_id": 35,
+        "type": "potato",
+        "size": "2.72cm 2.43cm",
+        "coordinates": [
+            0,
+            969,
+            215,
+            1270
+        ],
+        "frame_id": 77,
+        "time": "02:27:08",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "36": {
+        "camera_id": 1,
+        "potato_id": 36,
+        "type": "potato",
+        "size": "3.58cm 3.13cm",
+        "coordinates": [
+            0,
+            886,
+            205,
+            1190
+        ],
+        "frame_id": 69,
+        "time": "02:27:07",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "37": {
+        "camera_id": 1,
+        "potato_id": 37,
+        "type": "potato",
+        "size": "3.91cm 3.2cm",
+        "coordinates": [
+            0,
+            1202,
+            237,
+            1575
+        ],
+        "frame_id": 74,
+        "time": "02:27:08",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "38": {
+        "camera_id": 1,
+        "potato_id": 38,
+        "type": "potato",
+        "size": "2.73cm 2.2cm",
+        "coordinates": [
+            0,
+            399,
+            130,
+            651
+        ],
+        "frame_id": 79,
+        "time": "02:27:09",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "39": {
+        "camera_id": 1,
+        "potato_id": 39,
+        "type": "potato",
+        "size": "2.89cm 2.77cm",
+        "coordinates": [
+            0,
+            1370,
+            219,
+            1695
+        ],
+        "frame_id": 77,
+        "time": "02:27:08",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "40": {
+        "camera_id": 1,
+        "potato_id": 40,
+        "type": "potato",
+        "size": "2.89cm 2.8cm",
+        "coordinates": [
+            0,
+            1136,
+            178,
+            1448
+        ],
+        "frame_id": 80,
+        "time": "02:27:09",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "42": {
+        "camera_id": 1,
+        "potato_id": 42,
+        "type": "potato",
+        "size": "2.9cm 2.48cm",
+        "coordinates": [
+            0,
+            1313,
+            148,
+            1576
+        ],
+        "frame_id": 82,
+        "time": "02:27:09",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "43": {
+        "camera_id": 1,
+        "potato_id": 43,
+        "type": "potato",
+        "size": "2.81cm 2.62cm",
+        "coordinates": [
+            0,
+            347,
+            197,
+            633
+        ],
+        "frame_id": 85,
+        "time": "02:27:09",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "44": {
+        "camera_id": 1,
+        "potato_id": 44,
+        "type": "potato",
+        "size": "3.52cm 2.9cm",
+        "coordinates": [
+            0,
+            1,
+            164,
+            217
+        ],
+        "frame_id": 87,
+        "time": "02:27:10",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "45": {
+        "camera_id": 1,
+        "potato_id": 45,
+        "type": "potato",
+        "size": "2.92cm 2.53cm",
+        "coordinates": [
+            0,
+            724,
+            173,
+            963
+        ],
+        "frame_id": 87,
+        "time": "02:27:10",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "46": {
+        "camera_id": 1,
+        "potato_id": 46,
+        "type": "potato",
+        "size": "2.76cm 2.23cm",
+        "coordinates": [
+            0,
+            180,
+            153,
+            395
+        ],
+        "frame_id": 88,
+        "time": "02:27:10",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "47": {
+        "camera_id": 1,
+        "potato_id": 47,
+        "type": "potato",
+        "size": "3.34cm 2.73cm",
+        "coordinates": [
+            0,
+            329,
+            160,
+            605
+        ],
+        "frame_id": 90,
+        "time": "02:27:10",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "49": {
+        "camera_id": 1,
+        "potato_id": 49,
+        "type": "potato",
+        "size": "3.64cm 3.19cm",
+        "coordinates": [
+            0,
+            967,
+            150,
+            1249
+        ],
+        "frame_id": 92,
+        "time": "02:27:10",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "50": {
+        "camera_id": 1,
+        "potato_id": 50,
+        "type": "potato",
+        "size": "2.71cm 2.43cm",
+        "coordinates": [
+            0,
+            773,
+            171,
+            1023
+        ],
+        "frame_id": 113,
+        "time": "02:27:15",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "51": {
+        "camera_id": 1,
+        "potato_id": 51,
+        "type": "potato",
+        "size": "3.67cm 3.08cm",
+        "coordinates": [
+            0,
+            1269,
+            203,
+            1590
+        ],
+        "frame_id": 90,
+        "time": "02:27:10",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "52": {
+        "camera_id": 1,
+        "potato_id": 52,
+        "type": "potato",
+        "size": "3.26cm 2.73cm",
+        "coordinates": [
+            0,
+            915,
+            294,
+            1211
+        ],
+        "frame_id": 117,
+        "time": "02:27:15",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "53": {
+        "camera_id": 1,
+        "potato_id": 53,
+        "type": "potato",
+        "size": "4.08cm 3.04cm",
+        "coordinates": [
+            0,
+            646,
+            207,
+            985
+        ],
+        "frame_id": 129,
+        "time": "02:27:17",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "54": {
+        "camera_id": 1,
+        "potato_id": 54,
+        "type": "potato",
+        "size": "2.76cm 2.57cm",
+        "coordinates": [
+            0,
+            1222,
+            181,
+            1490
+        ],
+        "frame_id": 111,
+        "time": "02:27:14",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "56": {
+        "camera_id": 1,
+        "potato_id": 56,
+        "type": "potato",
+        "size": "2.64cm 2.35cm",
+        "coordinates": [
+            0,
+            1167,
+            160,
+            1450
+        ],
+        "frame_id": 116,
+        "time": "02:27:15",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "57": {
+        "camera_id": 1,
+        "potato_id": 57,
+        "type": "potato",
+        "size": "2.51cm 2.42cm",
+        "coordinates": [
+            0,
+            883,
+            189,
+            1181
+        ],
+        "frame_id": 115,
+        "time": "02:27:15",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "58": {
+        "camera_id": 1,
+        "potato_id": 58,
+        "type": "potato",
+        "size": "3.26cm 2.78cm",
+        "coordinates": [
+            0,
+            614,
+            224,
+            909
+        ],
+        "frame_id": 119,
+        "time": "02:27:16",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "59": {
+        "camera_id": 1,
+        "potato_id": 59,
+        "type": "potato",
+        "size": "2.91cm 2.8cm",
+        "coordinates": [
+            0,
+            835,
+            148,
+            1113
+        ],
+        "frame_id": 122,
+        "time": "02:27:16",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "60": {
+        "camera_id": 1,
+        "potato_id": 60,
+        "type": "potato",
+        "size": "4.59cm 3.25cm",
+        "coordinates": [
+            0,
+            1140,
+            137,
+            1455
+        ],
+        "frame_id": 124,
+        "time": "02:27:16",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "61": {
+        "camera_id": 1,
+        "potato_id": 61,
+        "type": "potato",
+        "size": "2.78cm 2.51cm",
+        "coordinates": [
+            0,
+            921,
+            199,
+            1280
+        ],
+        "frame_id": 132,
+        "time": "02:27:18",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "62": {
+        "camera_id": 1,
+        "potato_id": 62,
+        "type": "potato",
+        "size": "2.81cm 2.6cm",
+        "coordinates": [
+            0,
+            1193,
+            201,
+            1468
+        ],
+        "frame_id": 129,
+        "time": "02:27:17",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "63": {
+        "camera_id": 1,
+        "potato_id": 63,
+        "type": "potato",
+        "size": "2.84cm 2.36cm",
+        "coordinates": [
+            0,
+            775,
+            92,
+            979
+        ],
+        "frame_id": 137,
+        "time": "02:27:19",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "64": {
+        "camera_id": 1,
+        "potato_id": 64,
+        "type": "potato",
+        "size": "3.09cm 2.86cm",
+        "coordinates": [
+            0,
+            1466,
+            229,
+            1774
+        ],
+        "frame_id": 128,
+        "time": "02:27:17",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "65": {
+        "camera_id": 1,
+        "potato_id": 65,
+        "type": "potato",
+        "size": "4.19cm 3.22cm",
+        "coordinates": [
+            0,
+            1212,
+            238,
+            1559
+        ],
+        "frame_id": 134,
+        "time": "02:27:18",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "66": {
+        "camera_id": 1,
+        "potato_id": 66,
+        "type": "potato",
+        "size": "3.96cm 3.3cm",
+        "coordinates": [
+            0,
+            1538,
+            231,
+            1879
+        ],
+        "frame_id": 135,
+        "time": "02:27:18",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "67": {
+        "camera_id": 1,
+        "potato_id": 67,
+        "type": "potato",
+        "size": "2.82cm 2.38cm",
+        "coordinates": [
+            0,
+            1296,
+            181,
+            1550
+        ],
+        "frame_id": 138,
+        "time": "02:27:19",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "68": {
+        "camera_id": 1,
+        "potato_id": 68,
+        "type": "potato",
+        "size": "3.16cm 2.63cm",
+        "coordinates": [
+            0,
+            1372,
+            151,
+            1638
+        ],
+        "frame_id": 147,
+        "time": "02:27:20",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "69": {
+        "camera_id": 1,
+        "potato_id": 69,
+        "type": "potato",
+        "size": "2.8cm 2.67cm",
+        "coordinates": [
+            0,
+            1065,
+            156,
+            1297
+        ],
+        "frame_id": 149,
+        "time": "02:27:21",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "70": {
+        "camera_id": 1,
+        "potato_id": 70,
+        "type": "potato",
+        "size": "2.79cm 2.46cm",
+        "coordinates": [
+            0,
+            841,
+            183,
+            1102
+        ],
+        "frame_id": 155,
+        "time": "02:27:22",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "72": {
+        "camera_id": 1,
+        "potato_id": 72,
+        "type": "potato",
+        "size": "2.68cm 2.29cm",
+        "coordinates": [
+            0,
+            888,
+            206,
+            1170
+        ],
+        "frame_id": 151,
+        "time": "02:27:21",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "73": {
+        "camera_id": 1,
+        "potato_id": 73,
+        "type": "potato",
+        "size": "2.56cm 2.37cm",
+        "coordinates": [
+            0,
+            1205,
+            176,
+            1444
+        ],
+        "frame_id": 151,
+        "time": "02:27:21",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "74": {
+        "camera_id": 1,
+        "potato_id": 74,
+        "type": "potato",
+        "size": "2.92cm 2.69cm",
+        "coordinates": [
+            0,
+            1095,
+            180,
+            1360
+        ],
+        "frame_id": 154,
+        "time": "02:27:21",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "75": {
+        "camera_id": 1,
+        "potato_id": 75,
+        "type": "potato",
+        "size": "3.69cm 2.66cm",
+        "coordinates": [
+            0,
+            1183,
+            149,
+            1425
+        ],
+        "frame_id": 162,
+        "time": "02:27:23",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "76": {
+        "camera_id": 1,
+        "potato_id": 76,
+        "type": "potato",
+        "size": "3.37cm 2.6cm",
+        "coordinates": [
+            0,
+            588,
+            151,
+            863
+        ],
+        "frame_id": 162,
+        "time": "02:27:23",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "77": {
+        "camera_id": 1,
+        "potato_id": 77,
+        "type": "potato",
+        "size": "5.3cm 3.8cm",
+        "coordinates": [
+            0,
+            3,
+            242,
+            434
+        ],
+        "frame_id": 177,
+        "time": "02:27:27",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "78": {
+        "camera_id": 1,
+        "potato_id": 78,
+        "type": "potato",
+        "size": "2.63cm 2.49cm",
+        "coordinates": [
+            0,
+            578,
+            161,
+            825
+        ],
+        "frame_id": 171,
+        "time": "02:27:26",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "79": {
+        "camera_id": 1,
+        "potato_id": 79,
+        "type": "potato",
+        "size": "3.17cm 2.68cm",
+        "coordinates": [
+            0,
+            636,
+            179,
+            878
+        ],
+        "frame_id": 183,
+        "time": "02:27:29",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "80": {
+        "camera_id": 1,
+        "potato_id": 80,
+        "type": "potato",
+        "size": "2.87cm 2.47cm",
+        "coordinates": [
+            0,
+            422,
+            231,
+            705
+        ],
+        "frame_id": 173,
+        "time": "02:27:26",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "81": {
+        "camera_id": 1,
+        "potato_id": 81,
+        "type": "potato",
+        "size": "2.92cm 2.43cm",
+        "coordinates": [
+            0,
+            518,
+            173,
+            805
+        ],
+        "frame_id": 175,
+        "time": "02:27:27",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "82": {
+        "camera_id": 1,
+        "potato_id": 82,
+        "type": "potato",
+        "size": "3.29cm 2.87cm",
+        "coordinates": [
+            0,
+            845,
+            213,
+            1179
+        ],
+        "frame_id": 176,
+        "time": "02:27:27",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "84": {
+        "camera_id": 1,
+        "potato_id": 84,
+        "type": "potato",
+        "size": "2.98cm 2.56cm",
+        "coordinates": [
+            0,
+            135,
+            175,
+            438
+        ],
+        "frame_id": 181,
+        "time": "02:27:28",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "85": {
+        "camera_id": 1,
+        "potato_id": 85,
+        "type": "potato",
+        "size": "3.3cm 2.92cm",
+        "coordinates": [
+            0,
+            542,
+            223,
+            886
+        ],
+        "frame_id": 178,
+        "time": "02:27:27",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "86": {
+        "camera_id": 1,
+        "potato_id": 86,
+        "type": "potato",
+        "size": "2.71cm 2.32cm",
+        "coordinates": [
+            0,
+            389,
+            191,
+            690
+        ],
+        "frame_id": 180,
+        "time": "02:27:28",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "87": {
+        "camera_id": 1,
+        "potato_id": 87,
+        "type": "potato",
+        "size": "2.66cm 2.3cm",
+        "coordinates": [
+            0,
+            458,
+            150,
+            695
+        ],
+        "frame_id": 185,
+        "time": "02:27:29",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "88": {
+        "camera_id": 1,
+        "potato_id": 88,
+        "type": "potato",
+        "size": "2.7cm 2.51cm",
+        "coordinates": [
+            0,
+            691,
+            179,
+            956
+        ],
+        "frame_id": 187,
+        "time": "02:27:29",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "89": {
+        "camera_id": 1,
+        "potato_id": 89,
+        "type": "potato",
+        "size": "3.21cm 2.68cm",
+        "coordinates": [
+            0,
+            364,
+            200,
+            618
+        ],
+        "frame_id": 184,
+        "time": "02:27:29",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "90": {
+        "camera_id": 1,
+        "potato_id": 90,
+        "type": "potato",
+        "size": "3.07cm 2.73cm",
+        "coordinates": [
+            0,
+            390,
+            169,
+            647
+        ],
+        "frame_id": 189,
+        "time": "02:27:30",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "92": {
+        "camera_id": 1,
+        "potato_id": 92,
+        "type": "potato",
+        "size": "3.08cm 2.82cm",
+        "coordinates": [
+            0,
+            571,
+            221,
+            875
+        ],
+        "frame_id": 190,
+        "time": "02:27:30",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "93": {
+        "camera_id": 1,
+        "potato_id": 93,
+        "type": "potato",
+        "size": "2.99cm 2.75cm",
+        "coordinates": [
+            0,
+            955,
+            226,
+            1276
+        ],
+        "frame_id": 190,
+        "time": "02:27:30",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "94": {
+        "camera_id": 1,
+        "potato_id": 94,
+        "type": "potato",
+        "size": "3.08cm 2.7cm",
+        "coordinates": [
+            0,
+            804,
+            206,
+            1106
+        ],
+        "frame_id": 193,
+        "time": "02:27:30",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "95": {
+        "camera_id": 1,
+        "potato_id": 95,
+        "type": "potato",
+        "size": "2.87cm 2.4cm",
+        "coordinates": [
+            0,
+            538,
+            236,
+            824
+        ],
+        "frame_id": 193,
+        "time": "02:27:30",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "96": {
+        "camera_id": 1,
+        "potato_id": 96,
+        "type": "potato",
+        "size": "2.82cm 2.29cm",
+        "coordinates": [
+            0,
+            386,
+            211,
+            702
+        ],
+        "frame_id": 196,
+        "time": "02:27:31",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "97": {
+        "camera_id": 1,
+        "potato_id": 97,
+        "type": "potato",
+        "size": "2.69cm 2.5cm",
+        "coordinates": [
+            0,
+            6,
+            139,
+            242
+        ],
+        "frame_id": 198,
+        "time": "02:27:31",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "98": {
+        "camera_id": 1,
+        "potato_id": 98,
+        "type": "potato",
+        "size": "2.98cm 2.84cm",
+        "coordinates": [
+            0,
+            611,
+            161,
+            894
+        ],
+        "frame_id": 199,
+        "time": "02:27:31",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "99": {
+        "camera_id": 1,
+        "potato_id": 99,
+        "type": "potato",
+        "size": "2.92cm 2.59cm",
+        "coordinates": [
+            0,
+            238,
+            146,
+            511
+        ],
+        "frame_id": 199,
+        "time": "02:27:31",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "101": {
+        "camera_id": 1,
+        "potato_id": 101,
+        "type": "potato",
+        "size": "3.07cm 2.96cm",
+        "coordinates": [
+            0,
+            1125,
+            166,
+            1409
+        ],
+        "frame_id": 202,
+        "time": "02:27:32",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "102": {
+        "camera_id": 1,
+        "potato_id": 102,
+        "type": "potato",
+        "size": "3.19cm 2.82cm",
+        "coordinates": [
+            0,
+            715,
+            225,
+            1041
+        ],
+        "frame_id": 205,
+        "time": "02:27:33",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "104": {
+        "camera_id": 1,
+        "potato_id": 104,
+        "type": "potato",
+        "size": "3.62cm 2.88cm",
+        "coordinates": [
+            0,
+            943,
+            170,
+            1243
+        ],
+        "frame_id": 211,
+        "time": "02:27:35",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "105": {
+        "camera_id": 1,
+        "potato_id": 105,
+        "type": "potato",
+        "size": "3.12cm 2.66cm",
+        "coordinates": [
+            0,
+            757,
+            132,
+            997
+        ],
+        "frame_id": 216,
+        "time": "02:27:36",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "107": {
+        "camera_id": 1,
+        "potato_id": 107,
+        "type": "potato",
+        "size": "3.65cm 3.06cm",
+        "coordinates": [
+            0,
+            404,
+            213,
+            767
+        ],
+        "frame_id": 219,
+        "time": "02:27:36",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "109": {
+        "camera_id": 1,
+        "potato_id": 109,
+        "type": "potato",
+        "size": "3.19cm 3.04cm",
+        "coordinates": [
+            0,
+            850,
+            229,
+            1165
+        ],
+        "frame_id": 220,
+        "time": "02:27:36",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "110": {
+        "camera_id": 1,
+        "potato_id": 110,
+        "type": "potato",
+        "size": "3.12cm 2.53cm",
+        "coordinates": [
+            0,
+            235,
+            126,
+            493
+        ],
+        "frame_id": 225,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "111": {
+        "camera_id": 1,
+        "potato_id": 111,
+        "type": "potato",
+        "size": "2.78cm 2.55cm",
+        "coordinates": [
+            0,
+            451,
+            168,
+            714
+        ],
+        "frame_id": 223,
+        "time": "02:27:36",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "113": {
+        "camera_id": 1,
+        "potato_id": 113,
+        "type": "potato",
+        "size": "2.99cm 2.78cm",
+        "coordinates": [
+            0,
+            659,
+            188,
+            969
+        ],
+        "frame_id": 224,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "114": {
+        "camera_id": 1,
+        "potato_id": 114,
+        "type": "potato",
+        "size": "3.47cm 3.12cm",
+        "coordinates": [
+            0,
+            976,
+            178,
+            1267
+        ],
+        "frame_id": 224,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "117": {
+        "camera_id": 1,
+        "potato_id": 117,
+        "type": "potato",
+        "size": "2.73cm 2.53cm",
+        "coordinates": [
+            0,
+            421,
+            198,
+            676
+        ],
+        "frame_id": 226,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "118": {
+        "camera_id": 1,
+        "potato_id": 118,
+        "type": "potato",
+        "size": "3.19cm 2.53cm",
+        "coordinates": [
+            0,
+            692,
+            191,
+            998
+        ],
+        "frame_id": 229,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "119": {
+        "camera_id": 1,
+        "potato_id": 119,
+        "type": "potato",
+        "size": "3.46cm 2.86cm",
+        "coordinates": [
+            0,
+            18,
+            231,
+            315
+        ],
+        "frame_id": 228,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "120": {
+        "camera_id": 1,
+        "potato_id": 120,
+        "type": "potato",
+        "size": "4.37cm 2.96cm",
+        "coordinates": [
+            0,
+            286,
+            213,
+            712
+        ],
+        "frame_id": 230,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "122": {
+        "camera_id": 1,
+        "potato_id": 122,
+        "type": "potato",
+        "size": "3.27cm 2.42cm",
+        "coordinates": [
+            0,
+            17,
+            320,
+            362
+        ],
+        "frame_id": 230,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "124": {
+        "camera_id": 1,
+        "potato_id": 124,
+        "type": "potato",
+        "size": "3.07cm 2.9cm",
+        "coordinates": [
+            98,
+            470,
+            460,
+            787
+        ],
+        "frame_id": 230,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "125": {
+        "camera_id": 1,
+        "potato_id": 125,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            3406,
+            1506,
+            3666,
+            1761
+        ],
+        "frame_id": 230,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "126": {
+        "camera_id": 1,
+        "potato_id": 126,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            1992,
+            931,
+            2272,
+            1224
+        ],
+        "frame_id": 230,
+        "time": "02:27:37",
+        "passed": "yes",
+        "sorted": "no"
+    }
+}

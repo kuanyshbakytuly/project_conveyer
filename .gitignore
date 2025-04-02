@@ -1,0 +1,8 @@
+.venv
+Dataset
+Videos
+.DS_Store
+.venv/
+.conda
+Outpus
+Videos.zip
