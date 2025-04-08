@@ -39,7 +39,7 @@ def main():
     camera_id = 1
 
     # === Configuration ===
-    path = args.video_path
+    path = r'C:\\Users\\Asus Rog Strix\\Desktop\\Multimodal\\Videos\\video.mp4'
     model_object_detection_path = args.model_object_detection
     model_image_segmantation_path = args.model_image_segmentation
     output_path = args.output_path
@@ -145,29 +145,32 @@ def main():
 
             # Segmentation
             if potato_img_boxes:
-                results_seg = model_seg.predict(potato_img_boxes, verbose=False)
+                results_seg = []
+                for i in potato_img_boxes:
+                    results_seg.append(model_seg.predict(i, verbose=False)[0])
                 for i, result in enumerate(results_seg):
                     x1, y1, x2, y2, track_id = potato_boxes[i]
                     prev_major, prev_minor = map_track_size.get(track_id, (0, 0))
 
-                    for mask in result.masks.xy:
-                        abs_coords = mask + np.array([x1, y1])
-                        abs_coords = abs_coords.astype(np.int32)
+                    if result.masks:
+                        for mask in result.masks.xy:
+                            abs_coords = mask + np.array([x1, y1])
+                            abs_coords = abs_coords.astype(np.int32)
 
-                        contour = np.int32([abs_coords]).reshape((-1, 1, 2))
+                            contour = np.int32([abs_coords]).reshape((-1, 1, 2))
 
-                        if contour.shape[0] >= 5:
-                            ellipse = cv2.fitEllipse(contour)
-                            _, axes, _ = ellipse
-                            major_axis = max(axes) * cm_per_pixel
-                            minor_axis = min(axes) * cm_per_pixel
+                            if contour.shaperesult[0] >= 5:
+                                ellipse = cv2.fitEllipse(contour)
+                                _, axes, _ = ellipse
+                                major_axis = max(axes) * cm_per_pixel
+                                minor_axis = min(axes) * cm_per_pixel
 
-                            avg_major = (major_axis + prev_major) / 2 if prev_major else major_axis
-                            avg_minor = (minor_axis + prev_minor) / 2 if prev_minor else minor_axis
+                                avg_major = (major_axis + prev_major) / 2 if prev_major else major_axis
+                                avg_minor = (minor_axis + prev_minor) / 2 if prev_minor else minor_axis
 
-                            map_track_size[track_id] = (avg_major, avg_minor)
+                                map_track_size[track_id] = (avg_major, avg_minor)
 
-                            cv2.fillPoly(annotated_frame, [contour], colors)
+                                cv2.fillPoly(annotated_frame, [contour], colors)
 
             cv2.putText(annotated_frame, f"Potato Count: {max(track_set)}",
                         (10, 40), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2)
@@ -175,6 +178,13 @@ def main():
             frame_count += 1
 
             pbar.update(1)  # Update the progress bar
+            # Show the frame in real-time
+            annotated_frame = cv2.resize(annotated_frame, (annotated_frame.shape[0]//2, annotated_frame.shape[0]//2))
+            cv2.imshow('Annotated Video', annotated_frame)
+
+            # Press 'q' to stop the video display
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
     cap.release()
     out.release()

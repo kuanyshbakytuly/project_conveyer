@@ -3,15 +3,15 @@
         "camera_id": 1,
         "potato_id": 1,
         "type": "potato",
-        "size": "2.5cm 2.45cm",
+        "size": "2.49cm 2.39cm",
         "coordinates": [
             0,
-            1054,
-            201,
-            1333
+            993,
+            202,
+            733
         ],
         "frame_id": 43,
-        "time": "02:27:02",
+        "time": "20:49:51",
         "passed": "yes",
         "sorted": "no"
     },
@@ -19,15 +19,15 @@
         "camera_id": 1,
         "potato_id": 2,
         "type": "potato",
-        "size": "3.06cm 2.58cm",
+        "size": "2.94cm 2.61cm",
         "coordinates": [
             0,
-            704,
+            644,
             167,
-            963
+            1104
         ],
         "frame_id": 17,
-        "time": "02:26:55",
+        "time": "20:49:50",
         "passed": "yes",
         "sorted": "no"
     },
@@ -38,12 +38,12 @@
         "size": "0cm 0cm",
         "coordinates": [
             0,
-            412,
-            165,
-            667
+            351,
+            164,
+            1400
         ],
         "frame_id": 17,
-        "time": "02:26:55",
+        "time": "20:49:50",
         "passed": "yes",
         "sorted": "no"
     },
@@ -51,15 +51,15 @@
         "camera_id": 1,
         "potato_id": 4,
         "type": "potato",
-        "size": "4.13cm 3.05cm",
+        "size": "3.94cm 2.92cm",
         "coordinates": [
             0,
-            1478,
-            200,
-            1808
+            1417,
+            201,
+            259
         ],
         "frame_id": 20,
-        "time": "02:26:56",
+        "time": "20:49:50",
         "passed": "yes",
         "sorted": "no"
     },
@@ -67,15 +67,15 @@
         "camera_id": 1,
         "potato_id": 5,
         "type": "potato",
-        "size": "3.39cm 3.16cm",
+        "size": "3.35cm 3.15cm",
         "coordinates": [
             0,
-            1075,
+            1014,
             195,
-            1388
+            680
         ],
         "frame_id": 20,
-        "time": "02:26:56",
+        "time": "20:49:50",
         "passed": "yes",
         "sorted": "no"
     },
@@ -83,15 +83,15 @@
         "camera_id": 1,
         "potato_id": 6,
         "type": "potato",
-        "size": "3.52cm 3.01cm",
+        "size": "3.49cm 3.0cm",
         "coordinates": [
             0,
-            911,
-            168,
-            1166
+            850,
+            167,
+            903
         ],
         "frame_id": 18,
-        "time": "02:26:55",
+        "time": "20:49:50",
         "passed": "yes",
         "sorted": "no"
     },
@@ -99,15 +99,15 @@
         "camera_id": 1,
         "potato_id": 7,
         "type": "potato",
-        "size": "3.02cm 2.64cm",
+        "size": "2.94cm 2.6cm",
         "coordinates": [
             0,
-            1242,
+            1181,
             265,
-            1546
+            520
         ],
         "frame_id": 16,
-        "time": "02:26:55",
+        "time": "20:49:50",
         "passed": "yes",
         "sorted": "no"
     },
@@ -115,15 +115,15 @@
         "camera_id": 1,
         "potato_id": 8,
         "type": "potato",
-        "size": "0cm 0cm",
+        "size": "2.99cm 2.48cm",
         "coordinates": [
             0,
-            864,
-            243,
-            1170
+            1148,
+            138,
+            618
         ],
-        "frame_id": 13,
-        "time": "02:26:54",
+        "frame_id": 23,
+        "time": "20:49:50",
         "passed": "yes",
         "sorted": "no"
     },
@@ -131,15 +131,15 @@
         "camera_id": 1,
         "potato_id": 9,
         "type": "potato",
-        "size": "3.03cm 2.6cm",
+        "size": "0cm 0cm",
         "coordinates": [
             0,
-            1209,
-            138,
-            1449
+            804,
+            242,
+            897
         ],
-        "frame_id": 23,
-        "time": "02:26:56",
+        "frame_id": 13,
+        "time": "20:49:49",
         "passed": "yes",
         "sorted": "no"
     },
@@ -147,15 +147,15 @@
         "camera_id": 1,
         "potato_id": 10,
         "type": "potato",
-        "size": "2.87cm 2.64cm",
+        "size": "2.97cm 2.64cm",
         "coordinates": [
             0,
-            1359,
-            208,
-            1647
+            1298,
+            209,
+            420
         ],
         "frame_id": 45,
-        "time": "02:27:02",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -163,15 +163,15 @@
         "camera_id": 1,
         "potato_id": 11,
         "type": "potato",
-        "size": "3.51cm 2.92cm",
+        "size": "3.3cm 2.71cm",
         "coordinates": [
             0,
-            689,
-            164,
-            1013
+            626,
+            165,
+            1054
         ],
         "frame_id": 44,
-        "time": "02:27:02",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -182,12 +182,12 @@
         "size": "0cm 0cm",
         "coordinates": [
             0,
-            576,
-            280,
-            909
+            515,
+            279,
+            1159
         ],
         "frame_id": 12,
-        "time": "02:26:54",
+        "time": "20:49:49",
         "passed": "yes",
         "sorted": "no"
     },
@@ -195,15 +195,15 @@
         "camera_id": 1,
         "potato_id": 13,
         "type": "potato",
-        "size": "3.2cm 2.46cm",
+        "size": "3.15cm 2.47cm",
         "coordinates": [
             0,
-            1477,
+            1416,
             230,
-            1777
+            290
         ],
         "frame_id": 48,
-        "time": "02:27:03",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -214,12 +214,12 @@
         "size": "0cm 0cm",
         "coordinates": [
             0,
-            680,
-            155,
-            965
+            622,
+            153,
+            1103
         ],
         "frame_id": 2,
-        "time": "02:26:53",
+        "time": "20:49:49",
         "passed": "yes",
         "sorted": "no"
     },
@@ -230,12 +230,12 @@
         "size": "0cm 0cm",
         "coordinates": [
             0,
-            493,
-            273,
-            797
+            490,
+            200,
+            1271
         ],
-        "frame_id": 4,
-        "time": "02:26:53",
+        "frame_id": 5,
+        "time": "20:49:49",
         "passed": "yes",
         "sorted": "no"
     },
@@ -243,15 +243,15 @@
         "camera_id": 1,
         "potato_id": 16,
         "type": "potato",
-        "size": "3.11cm 3.01cm",
+        "size": "3.18cm 2.96cm",
         "coordinates": [
             0,
-            1051,
+            989,
             249,
-            1387
+            680
         ],
         "frame_id": 45,
-        "time": "02:27:02",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -259,15 +259,15 @@
         "camera_id": 1,
         "potato_id": 17,
         "type": "potato",
-        "size": "4.26cm 3.45cm",
+        "size": "4.07cm 3.49cm",
         "coordinates": [
             0,
-            273,
-            230,
-            683
+            214,
+            229,
+            1385
         ],
         "frame_id": 42,
-        "time": "02:27:02",
+        "time": "20:49:51",
         "passed": "yes",
         "sorted": "no"
     },
@@ -275,15 +275,15 @@
         "camera_id": 1,
         "potato_id": 18,
         "type": "potato",
-        "size": "2.88cm 2.67cm",
+        "size": "2.82cm 2.54cm",
         "coordinates": [
             0,
-            916,
-            180,
-            1219
+            854,
+            181,
+            847
         ],
         "frame_id": 49,
-        "time": "02:27:03",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -291,15 +291,15 @@
         "camera_id": 1,
         "potato_id": 19,
         "type": "potato",
-        "size": "3.19cm 2.75cm",
+        "size": "3.13cm 2.51cm",
         "coordinates": [
             0,
-            134,
+            73,
             148,
-            407
+            1660
         ],
         "frame_id": 50,
-        "time": "02:27:03",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -307,15 +307,15 @@
         "camera_id": 1,
         "potato_id": 20,
         "type": "potato",
-        "size": "2.92cm 2.68cm",
+        "size": "2.71cm 2.71cm",
         "coordinates": [
             0,
-            1200,
+            1139,
             214,
-            1501
+            566
         ],
         "frame_id": 48,
-        "time": "02:27:03",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -323,15 +323,15 @@
         "camera_id": 1,
         "potato_id": 21,
         "type": "potato",
-        "size": "2.81cm 2.44cm",
+        "size": "3.15cm 2.95cm",
         "coordinates": [
             0,
-            850,
-            167,
-            1135
+            1043,
+            236,
+            631
         ],
-        "frame_id": 57,
-        "time": "02:27:04",
+        "frame_id": 51,
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -339,15 +339,15 @@
         "camera_id": 1,
         "potato_id": 22,
         "type": "potato",
-        "size": "3.27cm 3.1cm",
+        "size": "2.77cm 2.45cm",
         "coordinates": [
             0,
-            1105,
-            235,
-            1436
+            789,
+            167,
+            932
         ],
-        "frame_id": 51,
-        "time": "02:27:03",
+        "frame_id": 57,
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -355,15 +355,15 @@
         "camera_id": 1,
         "potato_id": 23,
         "type": "potato",
-        "size": "3.9cm 3.19cm",
+        "size": "3.59cm 3.32cm",
         "coordinates": [
             0,
-            1714,
+            1653,
             253,
-            2088
+            -21
         ],
         "frame_id": 49,
-        "time": "02:27:03",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -371,15 +371,15 @@
         "camera_id": 1,
         "potato_id": 24,
         "type": "potato",
-        "size": "2.82cm 2.41cm",
+        "size": "2.68cm 2.34cm",
         "coordinates": [
             0,
-            1086,
+            1025,
             195,
-            1373
+            694
         ],
         "frame_id": 59,
-        "time": "02:27:05",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -387,15 +387,15 @@
         "camera_id": 1,
         "potato_id": 25,
         "type": "potato",
-        "size": "3.03cm 2.91cm",
+        "size": "2.96cm 2.75cm",
         "coordinates": [
             0,
-            134,
-            164,
-            404
+            74,
+            163,
+            1663
         ],
         "frame_id": 54,
-        "time": "02:27:04",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -403,15 +403,15 @@
         "camera_id": 1,
         "potato_id": 26,
         "type": "potato",
-        "size": "2.63cm 2.52cm",
+        "size": "2.57cm 2.35cm",
         "coordinates": [
             0,
-            916,
+            855,
             219,
-            1188
+            879
         ],
         "frame_id": 53,
-        "time": "02:27:04",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -419,15 +419,15 @@
         "camera_id": 1,
         "potato_id": 27,
         "type": "potato",
-        "size": "2.91cm 2.57cm",
+        "size": "2.84cm 2.56cm",
         "coordinates": [
             0,
-            1163,
+            1101,
             143,
-            1402
+            664
         ],
         "frame_id": 55,
-        "time": "02:27:04",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -435,15 +435,15 @@
         "camera_id": 1,
         "potato_id": 28,
         "type": "potato",
-        "size": "2.97cm 2.41cm",
+        "size": "2.79cm 2.49cm",
         "coordinates": [
             0,
-            1443,
+            1382,
             171,
-            1684
+            384
         ],
         "frame_id": 54,
-        "time": "02:27:04",
+        "time": "20:49:52",
         "passed": "yes",
         "sorted": "no"
     },
@@ -451,15 +451,15 @@
         "camera_id": 1,
         "potato_id": 29,
         "type": "potato",
-        "size": "3.82cm 3.08cm",
+        "size": "3.67cm 3.04cm",
         "coordinates": [
             0,
-            1352,
-            216,
-            1725
+            1290,
+            217,
+            340
         ],
         "frame_id": 60,
-        "time": "02:27:05",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -467,15 +467,15 @@
         "camera_id": 1,
         "potato_id": 30,
         "type": "potato",
-        "size": "1.31cm 0.93cm",
+        "size": "3.05cm 2.74cm",
         "coordinates": [
             0,
-            529,
+            468,
             202,
-            820
+            1246
         ],
         "frame_id": 60,
-        "time": "02:27:05",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -483,15 +483,15 @@
         "camera_id": 1,
         "potato_id": 31,
         "type": "potato",
-        "size": "2.81cm 2.53cm",
+        "size": "2.75cm 2.49cm",
         "coordinates": [
             0,
-            814,
+            753,
             233,
-            1120
+            947
         ],
         "frame_id": 59,
-        "time": "02:27:05",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -499,15 +499,15 @@
         "camera_id": 1,
         "potato_id": 32,
         "type": "potato",
-        "size": "2.64cm 2.44cm",
+        "size": "2.53cm 2.2cm",
         "coordinates": [
             0,
-            271,
-            178,
-            558
+            210,
+            179,
+            1508
         ],
         "frame_id": 60,
-        "time": "02:27:05",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -515,15 +515,15 @@
         "camera_id": 1,
         "potato_id": 33,
         "type": "potato",
-        "size": "2.83cm 2.27cm",
+        "size": "2.66cm 2.3cm",
         "coordinates": [
             0,
-            340,
+            279,
             191,
-            618
+            1449
         ],
         "frame_id": 63,
-        "time": "02:27:06",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -531,15 +531,15 @@
         "camera_id": 1,
         "potato_id": 34,
         "type": "potato",
-        "size": "3.58cm 2.58cm",
+        "size": "3.44cm 2.51cm",
         "coordinates": [
             0,
-            877,
-            152,
-            1208
+            814,
+            153,
+            858
         ],
         "frame_id": 63,
-        "time": "02:27:06",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -547,15 +547,15 @@
         "camera_id": 1,
         "potato_id": 35,
         "type": "potato",
-        "size": "2.72cm 2.43cm",
+        "size": "2.82cm 2.62cm",
         "coordinates": [
             0,
-            969,
-            215,
-            1270
+            909,
+            214,
+            797
         ],
         "frame_id": 77,
-        "time": "02:27:08",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -563,15 +563,15 @@
         "camera_id": 1,
         "potato_id": 36,
         "type": "potato",
-        "size": "3.58cm 3.13cm",
+        "size": "3.28cm 3.11cm",
         "coordinates": [
             0,
-            886,
-            205,
-            1190
+            828,
+            202,
+            879
         ],
         "frame_id": 69,
-        "time": "02:27:07",
+        "time": "20:49:53",
         "passed": "yes",
         "sorted": "no"
     },
@@ -579,15 +579,15 @@
         "camera_id": 1,
         "potato_id": 37,
         "type": "potato",
-        "size": "3.91cm 3.2cm",
+        "size": "3.99cm 3.03cm",
         "coordinates": [
             0,
-            1202,
+            1142,
             237,
-            1575
+            492
         ],
         "frame_id": 74,
-        "time": "02:27:08",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -595,15 +595,15 @@
         "camera_id": 1,
         "potato_id": 38,
         "type": "potato",
-        "size": "2.73cm 2.2cm",
+        "size": "2.56cm 2.2cm",
         "coordinates": [
             0,
-            399,
-            130,
-            651
+            338,
+            129,
+            1417
         ],
         "frame_id": 79,
-        "time": "02:27:09",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -611,15 +611,15 @@
         "camera_id": 1,
         "potato_id": 39,
         "type": "potato",
-        "size": "2.89cm 2.77cm",
+        "size": "2.87cm 2.64cm",
         "coordinates": [
             0,
-            1370,
-            219,
-            1695
+            1313,
+            217,
+            372
         ],
         "frame_id": 77,
-        "time": "02:27:08",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -627,15 +627,15 @@
         "camera_id": 1,
         "potato_id": 40,
         "type": "potato",
-        "size": "2.89cm 2.8cm",
+        "size": "2.86cm 2.68cm",
         "coordinates": [
             0,
-            1136,
+            1077,
             178,
-            1448
+            619
         ],
         "frame_id": 80,
-        "time": "02:27:09",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -643,15 +643,15 @@
         "camera_id": 1,
         "potato_id": 42,
         "type": "potato",
-        "size": "2.9cm 2.48cm",
+        "size": "2.81cm 2.37cm",
         "coordinates": [
             0,
-            1313,
+            1253,
             148,
-            1576
+            491
         ],
         "frame_id": 82,
-        "time": "02:27:09",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -659,15 +659,15 @@
         "camera_id": 1,
         "potato_id": 43,
         "type": "potato",
-        "size": "2.81cm 2.62cm",
+        "size": "2.68cm 2.47cm",
         "coordinates": [
             0,
-            347,
+            286,
             197,
-            633
+            1434
         ],
         "frame_id": 85,
-        "time": "02:27:09",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -675,15 +675,15 @@
         "camera_id": 1,
         "potato_id": 44,
         "type": "potato",
-        "size": "3.52cm 2.9cm",
+        "size": "3.52cm 2.87cm",
         "coordinates": [
             0,
-            1,
-            164,
-            217
+            -60,
+            165,
+            1849
         ],
         "frame_id": 87,
-        "time": "02:27:10",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -691,15 +691,15 @@
         "camera_id": 1,
         "potato_id": 45,
         "type": "potato",
-        "size": "2.92cm 2.53cm",
+        "size": "2.86cm 2.56cm",
         "coordinates": [
             0,
-            724,
-            173,
-            963
+            663,
+            174,
+            1104
         ],
         "frame_id": 87,
-        "time": "02:27:10",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -707,15 +707,15 @@
         "camera_id": 1,
         "potato_id": 46,
         "type": "potato",
-        "size": "2.76cm 2.23cm",
+        "size": "2.67cm 1.98cm",
         "coordinates": [
             0,
-            180,
+            119,
             153,
-            395
+            1672
         ],
         "frame_id": 88,
-        "time": "02:27:10",
+        "time": "20:49:54",
         "passed": "yes",
         "sorted": "no"
     },
@@ -723,15 +723,15 @@
         "camera_id": 1,
         "potato_id": 47,
         "type": "potato",
-        "size": "3.34cm 2.73cm",
+        "size": "3.26cm 2.8cm",
         "coordinates": [
             0,
-            329,
-            160,
-            605
+            270,
+            158,
+            1462
         ],
         "frame_id": 90,
-        "time": "02:27:10",
+        "time": "20:49:55",
         "passed": "yes",
         "sorted": "no"
     },
@@ -739,15 +739,15 @@
         "camera_id": 1,
         "potato_id": 49,
         "type": "potato",
-        "size": "3.64cm 3.19cm",
+        "size": "3.62cm 3.13cm",
         "coordinates": [
             0,
-            967,
-            150,
-            1249
+            906,
+            151,
+            817
         ],
         "frame_id": 92,
-        "time": "02:27:10",
+        "time": "20:49:55",
         "passed": "yes",
         "sorted": "no"
     },
@@ -755,15 +755,15 @@
         "camera_id": 1,
         "potato_id": 50,
         "type": "potato",
-        "size": "2.71cm 2.43cm",
+        "size": "2.77cm 2.45cm",
         "coordinates": [
             0,
-            773,
-            171,
-            1023
+            710,
+            172,
+            1043
         ],
         "frame_id": 113,
-        "time": "02:27:15",
+        "time": "20:49:56",
         "passed": "yes",
         "sorted": "no"
     },
@@ -771,15 +771,15 @@
         "camera_id": 1,
         "potato_id": 51,
         "type": "potato",
-        "size": "3.67cm 3.08cm",
+        "size": "3.52cm 3.03cm",
         "coordinates": [
             0,
-            1269,
-            203,
-            1590
+            1209,
+            204,
+            476
         ],
         "frame_id": 90,
-        "time": "02:27:10",
+        "time": "20:49:55",
         "passed": "yes",
         "sorted": "no"
     },
@@ -787,15 +787,15 @@
         "camera_id": 1,
         "potato_id": 52,
         "type": "potato",
-        "size": "3.26cm 2.73cm",
+        "size": "3.48cm 2.93cm",
         "coordinates": [
             0,
-            915,
+            855,
             294,
-            1211
+            856
         ],
         "frame_id": 117,
-        "time": "02:27:15",
+        "time": "20:49:56",
         "passed": "yes",
         "sorted": "no"
     },
@@ -803,15 +803,15 @@
         "camera_id": 1,
         "potato_id": 53,
         "type": "potato",
-        "size": "4.08cm 3.04cm",
+        "size": "3.69cm 2.97cm",
         "coordinates": [
             0,
-            646,
-            207,
-            985
+            587,
+            206,
+            1083
         ],
         "frame_id": 129,
-        "time": "02:27:17",
+        "time": "20:49:57",
         "passed": "yes",
         "sorted": "no"
     },
@@ -819,15 +819,15 @@
         "camera_id": 1,
         "potato_id": 54,
         "type": "potato",
-        "size": "2.76cm 2.57cm",
+        "size": "2.72cm 2.42cm",
         "coordinates": [
             0,
-            1222,
+            1161,
             181,
-            1490
+            577
         ],
         "frame_id": 111,
-        "time": "02:27:14",
+        "time": "20:49:56",
         "passed": "yes",
         "sorted": "no"
     },
@@ -835,15 +835,15 @@
         "camera_id": 1,
         "potato_id": 56,
         "type": "potato",
-        "size": "2.64cm 2.35cm",
+        "size": "2.62cm 2.31cm",
         "coordinates": [
             0,
-            1167,
-            160,
-            1450
+            1107,
+            159,
+            618
         ],
         "frame_id": 116,
-        "time": "02:27:15",
+        "time": "20:49:56",
         "passed": "yes",
         "sorted": "no"
     },
@@ -851,15 +851,15 @@
         "camera_id": 1,
         "potato_id": 57,
         "type": "potato",
-        "size": "2.51cm 2.42cm",
+        "size": "2.5cm 2.36cm",
         "coordinates": [
             0,
-            883,
+            822,
             189,
-            1181
+            887
         ],
         "frame_id": 115,
-        "time": "02:27:15",
+        "time": "20:49:56",
         "passed": "yes",
         "sorted": "no"
     },
@@ -867,15 +867,15 @@
         "camera_id": 1,
         "potato_id": 58,
         "type": "potato",
-        "size": "3.26cm 2.78cm",
+        "size": "3.46cm 2.84cm",
         "coordinates": [
             0,
-            614,
-            224,
-            909
+            584,
+            152,
+            1162
         ],
-        "frame_id": 119,
-        "time": "02:27:16",
+        "frame_id": 120,
+        "time": "20:49:57",
         "passed": "yes",
         "sorted": "no"
     },
@@ -883,15 +883,15 @@
         "camera_id": 1,
         "potato_id": 59,
         "type": "potato",
-        "size": "2.91cm 2.8cm",
+        "size": "2.93cm 2.77cm",
         "coordinates": [
             0,
-            835,
-            148,
-            1113
+            775,
+            147,
+            955
         ],
         "frame_id": 122,
-        "time": "02:27:16",
+        "time": "20:49:57",
         "passed": "yes",
         "sorted": "no"
     },
@@ -899,15 +899,15 @@
         "camera_id": 1,
         "potato_id": 60,
         "type": "potato",
-        "size": "4.59cm 3.25cm",
+        "size": "4.7cm 3.12cm",
         "coordinates": [
             0,
-            1140,
+            1080,
             137,
-            1455
+            613
         ],
         "frame_id": 124,
-        "time": "02:27:16",
+        "time": "20:49:57",
         "passed": "yes",
         "sorted": "no"
     },
@@ -915,15 +915,15 @@
         "camera_id": 1,
         "potato_id": 61,
         "type": "potato",
-        "size": "2.78cm 2.51cm",
+        "size": "3.05cm 2.56cm",
         "coordinates": [
             0,
-            921,
-            199,
-            1280
+            859,
+            198,
+            788
         ],
         "frame_id": 132,
-        "time": "02:27:18",
+        "time": "20:49:57",
         "passed": "yes",
         "sorted": "no"
     },
@@ -931,15 +931,15 @@
         "camera_id": 1,
         "potato_id": 62,
         "type": "potato",
-        "size": "2.81cm 2.6cm",
+        "size": "2.75cm 2.59cm",
         "coordinates": [
             0,
-            1193,
-            201,
-            1468
+            1131,
+            202,
+            598
         ],
         "frame_id": 129,
-        "time": "02:27:17",
+        "time": "20:49:57",
         "passed": "yes",
         "sorted": "no"
     },
@@ -947,15 +947,15 @@
         "camera_id": 1,
         "potato_id": 63,
         "type": "potato",
-        "size": "2.84cm 2.36cm",
+        "size": "2.65cm 2.26cm",
         "coordinates": [
             0,
-            775,
+            714,
             92,
-            979
+            1089
         ],
         "frame_id": 137,
-        "time": "02:27:19",
+        "time": "20:49:58",
         "passed": "yes",
         "sorted": "no"
     },
@@ -963,15 +963,15 @@
         "camera_id": 1,
         "potato_id": 64,
         "type": "potato",
-        "size": "3.09cm 2.86cm",
+        "size": "3.15cm 2.86cm",
         "coordinates": [
             0,
-            1466,
-            229,
-            1774
+            1405,
+            228,
+            293
         ],
         "frame_id": 128,
-        "time": "02:27:17",
+        "time": "20:49:57",
         "passed": "yes",
         "sorted": "no"
     },
@@ -979,15 +979,15 @@
         "camera_id": 1,
         "potato_id": 65,
         "type": "potato",
-        "size": "4.19cm 3.22cm",
+        "size": "4.08cm 3.32cm",
         "coordinates": [
             0,
-            1212,
-            238,
-            1559
+            1151,
+            237,
+            509
         ],
         "frame_id": 134,
-        "time": "02:27:18",
+        "time": "20:49:58",
         "passed": "yes",
         "sorted": "no"
     },
@@ -995,15 +995,15 @@
         "camera_id": 1,
         "potato_id": 66,
         "type": "potato",
-        "size": "3.96cm 3.3cm",
+        "size": "3.77cm 3.41cm",
         "coordinates": [
             0,
-            1538,
-            231,
-            1879
+            1476,
+            232,
+            188
         ],
         "frame_id": 135,
-        "time": "02:27:18",
+        "time": "20:49:58",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1011,15 +1011,15 @@
         "camera_id": 1,
         "potato_id": 67,
         "type": "potato",
-        "size": "2.82cm 2.38cm",
+        "size": "2.65cm 2.46cm",
         "coordinates": [
             0,
-            1296,
+            1235,
             181,
-            1550
+            517
         ],
         "frame_id": 138,
-        "time": "02:27:19",
+        "time": "20:49:58",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1027,15 +1027,15 @@
         "camera_id": 1,
         "potato_id": 68,
         "type": "potato",
-        "size": "3.16cm 2.63cm",
+        "size": "3.11cm 2.5cm",
         "coordinates": [
             0,
-            1372,
+            1311,
             151,
-            1638
+            429
         ],
         "frame_id": 147,
-        "time": "02:27:20",
+        "time": "20:49:58",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1043,15 +1043,15 @@
         "camera_id": 1,
         "potato_id": 69,
         "type": "potato",
-        "size": "2.8cm 2.67cm",
+        "size": "2.75cm 2.66cm",
         "coordinates": [
             0,
-            1065,
+            1003,
             156,
-            1297
+            770
         ],
         "frame_id": 149,
-        "time": "02:27:21",
+        "time": "20:49:59",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1059,15 +1059,15 @@
         "camera_id": 1,
         "potato_id": 70,
         "type": "potato",
-        "size": "2.79cm 2.46cm",
+        "size": "2.62cm 2.46cm",
         "coordinates": [
             0,
-            841,
-            183,
-            1102
+            780,
+            182,
+            964
         ],
         "frame_id": 155,
-        "time": "02:27:22",
+        "time": "20:49:59",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1075,15 +1075,15 @@
         "camera_id": 1,
         "potato_id": 72,
         "type": "potato",
-        "size": "2.68cm 2.29cm",
+        "size": "2.63cm 2.27cm",
         "coordinates": [
             0,
-            888,
+            828,
             206,
-            1170
+            897
         ],
         "frame_id": 151,
-        "time": "02:27:21",
+        "time": "20:49:59",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1091,15 +1091,15 @@
         "camera_id": 1,
         "potato_id": 73,
         "type": "potato",
-        "size": "2.56cm 2.37cm",
+        "size": "2.51cm 2.38cm",
         "coordinates": [
             0,
-            1205,
-            176,
-            1444
+            1147,
+            175,
+            623
         ],
         "frame_id": 151,
-        "time": "02:27:21",
+        "time": "20:49:59",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1107,15 +1107,15 @@
         "camera_id": 1,
         "potato_id": 74,
         "type": "potato",
-        "size": "2.92cm 2.69cm",
+        "size": "2.74cm 2.63cm",
         "coordinates": [
             0,
-            1095,
+            1034,
             180,
-            1360
+            706
         ],
         "frame_id": 154,
-        "time": "02:27:21",
+        "time": "20:49:59",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1123,15 +1123,15 @@
         "camera_id": 1,
         "potato_id": 75,
         "type": "potato",
-        "size": "3.69cm 2.66cm",
+        "size": "3.45cm 2.75cm",
         "coordinates": [
             0,
-            1183,
+            1122,
             149,
-            1425
+            642
         ],
         "frame_id": 162,
-        "time": "02:27:23",
+        "time": "20:49:59",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1139,15 +1139,15 @@
         "camera_id": 1,
         "potato_id": 76,
         "type": "potato",
-        "size": "3.37cm 2.6cm",
+        "size": "3.08cm 2.55cm",
         "coordinates": [
             0,
-            588,
+            527,
             151,
-            863
+            1204
         ],
         "frame_id": 162,
-        "time": "02:27:23",
+        "time": "20:49:59",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1155,15 +1155,15 @@
         "camera_id": 1,
         "potato_id": 77,
         "type": "potato",
-        "size": "5.3cm 3.8cm",
+        "size": "5.31cm 3.78cm",
         "coordinates": [
             0,
-            3,
+            -58,
             242,
-            434
+            1633
         ],
         "frame_id": 177,
-        "time": "02:27:27",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1171,15 +1171,15 @@
         "camera_id": 1,
         "potato_id": 78,
         "type": "potato",
-        "size": "2.63cm 2.49cm",
+        "size": "2.65cm 2.47cm",
         "coordinates": [
             0,
-            578,
+            517,
             161,
-            825
+            1242
         ],
         "frame_id": 171,
-        "time": "02:27:26",
+        "time": "20:50:00",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1187,15 +1187,15 @@
         "camera_id": 1,
         "potato_id": 79,
         "type": "potato",
-        "size": "3.17cm 2.68cm",
+        "size": "3.37cm 2.68cm",
         "coordinates": [
             0,
-            636,
+            575,
             179,
-            878
+            1189
         ],
         "frame_id": 183,
-        "time": "02:27:29",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1203,15 +1203,15 @@
         "camera_id": 1,
         "potato_id": 80,
         "type": "potato",
-        "size": "2.87cm 2.47cm",
+        "size": "2.72cm 2.52cm",
         "coordinates": [
             0,
-            422,
-            231,
-            705
+            361,
+            232,
+            1361
         ],
         "frame_id": 173,
-        "time": "02:27:26",
+        "time": "20:50:00",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1219,15 +1219,15 @@
         "camera_id": 1,
         "potato_id": 81,
         "type": "potato",
-        "size": "2.92cm 2.43cm",
+        "size": "2.85cm 2.41cm",
         "coordinates": [
             0,
-            518,
+            456,
             173,
-            805
+            1261
         ],
         "frame_id": 175,
-        "time": "02:27:27",
+        "time": "20:50:00",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1235,15 +1235,15 @@
         "camera_id": 1,
         "potato_id": 82,
         "type": "potato",
-        "size": "3.29cm 2.87cm",
+        "size": "3.22cm 2.8cm",
         "coordinates": [
             0,
-            845,
-            213,
-            1179
+            783,
+            214,
+            887
         ],
         "frame_id": 176,
-        "time": "02:27:27",
+        "time": "20:50:00",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1251,15 +1251,15 @@
         "camera_id": 1,
         "potato_id": 84,
         "type": "potato",
-        "size": "2.98cm 2.56cm",
+        "size": "3.07cm 2.35cm",
         "coordinates": [
             0,
-            135,
+            73,
             175,
-            438
+            1629
         ],
         "frame_id": 181,
-        "time": "02:27:28",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1267,15 +1267,15 @@
         "camera_id": 1,
         "potato_id": 85,
         "type": "potato",
-        "size": "3.3cm 2.92cm",
+        "size": "3.38cm 2.77cm",
         "coordinates": [
             0,
-            542,
-            223,
-            886
+            482,
+            222,
+            1181
         ],
         "frame_id": 178,
-        "time": "02:27:27",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1283,15 +1283,15 @@
         "camera_id": 1,
         "potato_id": 86,
         "type": "potato",
-        "size": "2.71cm 2.32cm",
+        "size": "2.71cm 2.26cm",
         "coordinates": [
             0,
-            389,
+            328,
             191,
-            690
+            1377
         ],
         "frame_id": 180,
-        "time": "02:27:28",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1299,15 +1299,15 @@
         "camera_id": 1,
         "potato_id": 87,
         "type": "potato",
-        "size": "2.66cm 2.3cm",
+        "size": "2.54cm 2.32cm",
         "coordinates": [
             0,
-            458,
-            150,
-            695
+            302,
+            199,
+            1447
         ],
-        "frame_id": 185,
-        "time": "02:27:29",
+        "frame_id": 184,
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1315,15 +1315,15 @@
         "camera_id": 1,
         "potato_id": 88,
         "type": "potato",
-        "size": "2.7cm 2.51cm",
+        "size": "2.71cm 2.42cm",
         "coordinates": [
             0,
-            691,
+            629,
             179,
-            956
+            1111
         ],
         "frame_id": 187,
-        "time": "02:27:29",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1331,15 +1331,15 @@
         "camera_id": 1,
         "potato_id": 89,
         "type": "potato",
-        "size": "3.21cm 2.68cm",
+        "size": "3.29cm 2.67cm",
         "coordinates": [
             0,
-            364,
-            200,
-            618
+            394,
+            141,
+            1373
         ],
-        "frame_id": 184,
-        "time": "02:27:29",
+        "frame_id": 185,
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1347,15 +1347,15 @@
         "camera_id": 1,
         "potato_id": 90,
         "type": "potato",
-        "size": "3.07cm 2.73cm",
+        "size": "3.08cm 2.55cm",
         "coordinates": [
             0,
-            390,
-            169,
-            647
+            329,
+            170,
+            1418
         ],
         "frame_id": 189,
-        "time": "02:27:30",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1363,15 +1363,15 @@
         "camera_id": 1,
         "potato_id": 92,
         "type": "potato",
-        "size": "3.08cm 2.82cm",
+        "size": "3.0cm 2.67cm",
         "coordinates": [
             0,
-            571,
-            221,
-            875
+            509,
+            222,
+            1191
         ],
         "frame_id": 190,
-        "time": "02:27:30",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1379,15 +1379,15 @@
         "camera_id": 1,
         "potato_id": 93,
         "type": "potato",
-        "size": "2.99cm 2.75cm",
+        "size": "2.96cm 2.67cm",
         "coordinates": [
             0,
-            955,
+            893,
             226,
-            1276
+            791
         ],
         "frame_id": 190,
-        "time": "02:27:30",
+        "time": "20:50:01",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1395,15 +1395,15 @@
         "camera_id": 1,
         "potato_id": 94,
         "type": "potato",
-        "size": "3.08cm 2.7cm",
+        "size": "3.16cm 2.78cm",
         "coordinates": [
             0,
-            804,
-            206,
-            1106
+            743,
+            207,
+            961
         ],
         "frame_id": 193,
-        "time": "02:27:30",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1411,15 +1411,15 @@
         "camera_id": 1,
         "potato_id": 95,
         "type": "potato",
-        "size": "2.87cm 2.4cm",
+        "size": "2.7cm 2.46cm",
         "coordinates": [
             0,
-            538,
+            476,
             236,
-            824
+            1243
         ],
         "frame_id": 193,
-        "time": "02:27:30",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1427,15 +1427,15 @@
         "camera_id": 1,
         "potato_id": 96,
         "type": "potato",
-        "size": "2.82cm 2.29cm",
+        "size": "2.67cm 2.37cm",
         "coordinates": [
             0,
-            386,
-            211,
-            702
+            324,
+            210,
+            1366
         ],
         "frame_id": 196,
-        "time": "02:27:31",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1443,15 +1443,15 @@
         "camera_id": 1,
         "potato_id": 97,
         "type": "potato",
-        "size": "2.69cm 2.5cm",
+        "size": "2.94cm 2.36cm",
         "coordinates": [
             0,
-            6,
+            -55,
             139,
-            242
+            1825
         ],
         "frame_id": 198,
-        "time": "02:27:31",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1459,15 +1459,15 @@
         "camera_id": 1,
         "potato_id": 98,
         "type": "potato",
-        "size": "2.98cm 2.84cm",
+        "size": "3.11cm 2.91cm",
         "coordinates": [
             0,
-            611,
-            161,
-            894
+            552,
+            160,
+            1173
         ],
         "frame_id": 199,
-        "time": "02:27:31",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1475,15 +1475,15 @@
         "camera_id": 1,
         "potato_id": 99,
         "type": "potato",
-        "size": "2.92cm 2.59cm",
+        "size": "2.91cm 2.4cm",
         "coordinates": [
             0,
-            238,
-            146,
-            511
+            178,
+            145,
+            1556
         ],
         "frame_id": 199,
-        "time": "02:27:31",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1491,15 +1491,15 @@
         "camera_id": 1,
         "potato_id": 101,
         "type": "potato",
-        "size": "3.07cm 2.96cm",
+        "size": "3.05cm 2.78cm",
         "coordinates": [
             0,
-            1125,
-            166,
-            1409
+            1066,
+            165,
+            658
         ],
         "frame_id": 202,
-        "time": "02:27:32",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1507,15 +1507,15 @@
         "camera_id": 1,
         "potato_id": 102,
         "type": "potato",
-        "size": "3.19cm 2.82cm",
+        "size": "3.12cm 2.73cm",
         "coordinates": [
             0,
-            715,
-            225,
-            1041
+            657,
+            223,
+            1026
         ],
         "frame_id": 205,
-        "time": "02:27:33",
+        "time": "20:50:02",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1523,15 +1523,15 @@
         "camera_id": 1,
         "potato_id": 104,
         "type": "potato",
-        "size": "3.62cm 2.88cm",
+        "size": "3.44cm 2.84cm",
         "coordinates": [
             0,
-            943,
+            881,
             170,
-            1243
+            824
         ],
         "frame_id": 211,
-        "time": "02:27:35",
+        "time": "20:50:03",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1539,15 +1539,15 @@
         "camera_id": 1,
         "potato_id": 105,
         "type": "potato",
-        "size": "3.12cm 2.66cm",
+        "size": "3.18cm 2.54cm",
         "coordinates": [
             0,
-            757,
+            695,
             132,
-            997
+            1071
         ],
         "frame_id": 216,
-        "time": "02:27:36",
+        "time": "20:50:03",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1555,15 +1555,15 @@
         "camera_id": 1,
         "potato_id": 107,
         "type": "potato",
-        "size": "3.65cm 3.06cm",
+        "size": "3.64cm 3.05cm",
         "coordinates": [
             0,
-            404,
+            343,
             213,
-            767
+            1300
         ],
         "frame_id": 219,
-        "time": "02:27:36",
+        "time": "20:50:03",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1571,15 +1571,15 @@
         "camera_id": 1,
         "potato_id": 109,
         "type": "potato",
-        "size": "3.19cm 3.04cm",
+        "size": "3.11cm 2.98cm",
         "coordinates": [
             0,
-            850,
-            229,
-            1165
+            789,
+            228,
+            903
         ],
         "frame_id": 220,
-        "time": "02:27:36",
+        "time": "20:50:03",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1587,15 +1587,15 @@
         "camera_id": 1,
         "potato_id": 110,
         "type": "potato",
-        "size": "3.12cm 2.53cm",
+        "size": "3.03cm 2.47cm",
         "coordinates": [
             0,
-            235,
+            174,
             126,
-            493
+            1574
         ],
         "frame_id": 225,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1603,15 +1603,15 @@
         "camera_id": 1,
         "potato_id": 111,
         "type": "potato",
-        "size": "2.78cm 2.55cm",
+        "size": "2.91cm 2.39cm",
         "coordinates": [
             0,
-            451,
-            168,
-            714
+            391,
+            167,
+            1355
         ],
         "frame_id": 223,
-        "time": "02:27:36",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1622,12 +1622,12 @@
         "size": "2.99cm 2.78cm",
         "coordinates": [
             0,
-            659,
+            598,
             188,
-            969
+            1098
         ],
         "frame_id": 224,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1635,15 +1635,15 @@
         "camera_id": 1,
         "potato_id": 114,
         "type": "potato",
-        "size": "3.47cm 3.12cm",
+        "size": "3.49cm 2.89cm",
         "coordinates": [
             0,
-            976,
-            178,
-            1267
+            914,
+            179,
+            799
         ],
         "frame_id": 224,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1651,15 +1651,15 @@
         "camera_id": 1,
         "potato_id": 117,
         "type": "potato",
-        "size": "2.73cm 2.53cm",
+        "size": "2.8cm 2.5cm",
         "coordinates": [
             0,
-            421,
-            198,
-            676
+            360,
+            199,
+            1391
         ],
         "frame_id": 226,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1667,31 +1667,15 @@
         "camera_id": 1,
         "potato_id": 118,
         "type": "potato",
-        "size": "3.19cm 2.53cm",
+        "size": "3.24cm 2.48cm",
         "coordinates": [
             0,
-            692,
-            191,
-            998
+            631,
+            192,
+            1069
         ],
         "frame_id": 229,
-        "time": "02:27:37",
-        "passed": "yes",
-        "sorted": "no"
-    },
-    "119": {
-        "camera_id": 1,
-        "potato_id": 119,
-        "type": "potato",
-        "size": "3.46cm 2.86cm",
-        "coordinates": [
-            0,
-            18,
-            231,
-            315
-        ],
-        "frame_id": 228,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1699,47 +1683,47 @@
         "camera_id": 1,
         "potato_id": 120,
         "type": "potato",
-        "size": "4.37cm 2.96cm",
+        "size": "3.32cm 2.99cm",
         "coordinates": [
             0,
-            286,
+            -43,
+            231,
+            1752
+        ],
+        "frame_id": 228,
+        "time": "20:50:04",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "121": {
+        "camera_id": 1,
+        "potato_id": 121,
+        "type": "potato",
+        "size": "4.32cm 2.83cm",
+        "coordinates": [
+            0,
+            225,
             213,
-            712
+            1355
         ],
         "frame_id": 230,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
-    "122": {
+    "123": {
         "camera_id": 1,
-        "potato_id": 122,
+        "potato_id": 123,
         "type": "potato",
-        "size": "3.27cm 2.42cm",
+        "size": "3.02cm 2.41cm",
         "coordinates": [
             0,
-            17,
+            -44,
             320,
-            362
+            1705
         ],
         "frame_id": 230,
-        "time": "02:27:37",
-        "passed": "yes",
-        "sorted": "no"
-    },
-    "124": {
-        "camera_id": 1,
-        "potato_id": 124,
-        "type": "potato",
-        "size": "3.07cm 2.9cm",
-        "coordinates": [
-            98,
-            470,
-            460,
-            787
-        ],
-        "frame_id": 230,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1747,15 +1731,15 @@
         "camera_id": 1,
         "potato_id": 125,
         "type": "potato",
-        "size": "0cm 0cm",
+        "size": "3.04cm 2.75cm",
         "coordinates": [
-            3406,
-            1506,
-            3666,
-            1761
+            98,
+            408,
+            460,
+            1280
         ],
         "frame_id": 230,
-        "time": "02:27:37",
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     },
@@ -1765,13 +1749,29 @@
         "type": "potato",
         "size": "0cm 0cm",
         "coordinates": [
-            1992,
-            931,
-            2272,
-            1224
+            3406,
+            1446,
+            3666,
+            306
         ],
         "frame_id": 230,
-        "time": "02:27:37",
+        "time": "20:50:04",
+        "passed": "yes",
+        "sorted": "no"
+    },
+    "127": {
+        "camera_id": 1,
+        "potato_id": 127,
+        "type": "potato",
+        "size": "0cm 0cm",
+        "coordinates": [
+            1991,
+            870,
+            2272,
+            843
+        ],
+        "frame_id": 230,
+        "time": "20:50:04",
         "passed": "yes",
         "sorted": "no"
     }
