@@ -10,3 +10,7 @@ Video_Codec_SDK_13.0.19
 get-pip.py
 ffmpeg
 output.mp4
+nv-codec-headers
+video.mp4
+__pycache__
+/__pycache__

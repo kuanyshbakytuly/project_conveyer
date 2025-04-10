@@ -1,0 +1,27 @@
+
+yolo export model='Models/yolodet_fp16/best.pt' format=onnx simplify=True opset=12 imgsz=640 batch=32 dynamic=True
+
+docker run -it --gpus all \
+  -v /home/paperspace/project_conveyer:/trt \
+  nvcr.io/nvidia/tensorrt:25.03-py3
+
+cd /trt
+
+trtexec \
+    --onnx=Models/yolodet_fp16/best.onnx \
+    --minShapes=images:1x3x640x640 \
+    --optShapes=images:16x3x640x640 \
+    --maxShapes=images:32x3x640x640 \
+    --saveEngine=Models/yolodet_fp16/best.plan
+
+polygraphy inspect model model_repository/model_det/1/model.plan --model-type engine
+
+sudo docker run --gpus=all -it --rm -p8000:8000 -p8001:8001 -p8002:8002 -v $(pwd)/model_repository:/models nvcr.io/nvidia/tritonserver:25.03-py3
+
+pip install opencv-python
+apt-get update
+apt-get install -y libgl1
+apt-get install -y libglvnd-dev
+ldconfig -p | grep libGL
+
+tritonserver --model-repository=/models

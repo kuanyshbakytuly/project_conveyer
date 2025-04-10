@@ -1,0 +1,27 @@
+name: "model_det"
+platform: "tensorrt_plan"
+max_batch_size: 32  # Must match max batch in trtexec
+
+input {
+  name: "images"
+  data_type: TYPE_FP32
+  dims: [3, 640, 640]  # Omit batch dimension (handled by Triton)
+  reshape: { shape: [3, 640, 640] }  # Optional, ensures correct reshaping
+}
+
+output {
+  name: "output0"
+  data_type: TYPE_FP32
+  dims: [5, 8400]  # Omit batch dimension (Triton adds it dynamically)
+  reshape: { shape: [5, 8400] }  # Optional, ensures correct reshaping
+}
+
+dynamic_batching {
+  preferred_batch_size: [1, 2, 4, 8, 16, 32]
+  max_queue_delay_microseconds: 500
+}
+
+instance_group {
+  kind: KIND_GPU
+  count: 1
+}
