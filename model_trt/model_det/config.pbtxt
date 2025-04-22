@@ -1,6 +1,6 @@
 name: "model_det"
-platform: "onnxruntime_onnx"
-max_batch_size: 0
+platform: "tensorrt_plan"
+max_batch_size: 32
 
 input {
   name: "images"
@@ -11,13 +11,10 @@ input {
 output {
   name: "output0"
   data_type: TYPE_FP32
-  dims: [5, -1] 
+  dims: [5, 8400] 
 }
 
-dynamic_batching {
-  preferred_batch_size: [1, 2, 4, 8, 16, 20]
-  max_queue_delay_microseconds: 500
-}
+dynamic_batching { preferred_batch_size: [ 20 ] }
 
 instance_group {
   kind: KIND_GPU
