@@ -152,13 +152,13 @@ Absolute Times per Frame (ms):
     plt.grid(True)
 
     plt.tight_layout()
-    plt.savefig('detailed_performance_analysis_1potok.png', dpi=300, bbox_inches='tight')
+    plt.savefig('detailed_performance_analysis_20potok.png', dpi=300, bbox_inches='tight')
     plt.close()
 
     print("Performance plots saved as 'detailed_performance_analysis.png'")
 
 def process_stream(stream, stream_id, output_stream, metrics_list):
-    if True:
+    try:
         import pycuda.autoinit
         torch.cuda.init()
 
@@ -171,29 +171,35 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
         frame_metrics = []
 
         # Initialization code
-        segmentation_area = [1295, 1, 2338, 2154]
-        cm_per_pixel = 0.00999000999000999
+        # Original values for 3840×2160:
+        # segmentation_area = [1295, 1, 2338, 2154]  # [x1, y1, x2, y2]
+        # cm_per_pixel = 0.00999000999000999
+
+        # Scaled values for 1920×1080:
+        segmentation_area = [648, 0, 1169, 1080]  # All coordinates divided by 2
+        cm_per_pixel = 0.01998  # Since pixels are now larger (half resolution), each pixel covers more cm
         conf = 0.6
         tracker_config = 'bytetrack_custom.yaml'
 
         # Initialize models
-        # detection = PotatoDetector(
-        #     model_path='Models/model_det_test/best.engine',
-        #     camera_id=stream_id,
-        #     task='detect',
-        #     tracker_config=tracker_config,
-        #     segmentation_area=segmentation_area,
-        #     track_ids=set(),
-        #     warmup_image='frame.jpg'
-        # )
+        detection = PotatoDetector(
+            model_path='Models/model_det_test/best.engine',
+            camera_id=stream_id,
+            task='detect',
+            tracker_config=tracker_config,
+            segmentation_area=segmentation_area,
+            track_ids=set(),
+            warmup_image='frame.jpg'
+        )
         
-        # segmentation = PotatoSegmentation(
-        #     model_path='Models/model_seg_fp32/best_yoloseg.engine',
-        #     ratio=cm_per_pixel,
-        #     warmup_image='box.jpg'
-        # )
+        segmentation = PotatoSegmentation(
+            model_path='Models/model_seg_fp32/best_yoloseg.engine',
+            ratio=cm_per_pixel,
+            warmup_image='box.jpg'
+        )
 
         cap = ffmpegcv.VideoCaptureNV(stream, pix_fmt='bgr24', resize=(1920, 1080))
+        out = ffmpegcv.VideoWriterNV(output_stream, 'h264', 25)
         frame_id = 0
 
         while True:
@@ -209,6 +215,8 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
                 'cpu': 0.0,
                 'gpu': 0.0
             }
+
+            reset_track = frame_id % 231 == 0
 
             # Measure frame read
             start_time = time.time()
@@ -228,27 +236,29 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
 
                 # Detection
                 det_start = time.time()
-                #track_result = detection.track(frame=inp, frame_id=frame_id, conf=conf)
-                #potato_images, potato_boxes = track_result[0], track_result[1]
-                #tracker_time = track_result[2]
-                #processing_time = track_result[3]
-                #detection_drawing_time = track_result[4]
+                track_result = detection.track(frame=inp, frame_id=frame_id, conf=conf, reset=reset_track)
+                potato_images, potato_boxes = track_result[0], track_result[1]
+                tracker_time = track_result[2]
+                processing_time = track_result[3]
+                detection_drawing_time = track_result[4]
                 
-                #frame_times['detection_tracker'] = tracker_time
-                #frame_times['detection_processing'] = processing_time
-                #frame_times['detection_drawing'] = detection_drawing_time
+                frame_times['detection_tracker'] = tracker_time
+                frame_times['detection_processing'] = processing_time
+                frame_times['detection_drawing'] = detection_drawing_time
                 frame_times['detection'] = time.time() - det_start
 
                 # Segmentation
                 seg_start = time.time()
-                # if potato_images:
-                #     detection.tracked_sizes, annotated_frame = segmentation.process_batch(
-                #         potato_images,
-                #         potato_boxes,
-                #         detection.tracked_sizes,
-                #         inp
-                #     )
+                if potato_images:
+                    detection.tracked_sizes, inp = segmentation.process_batch(
+                        potato_images,
+                        potato_boxes,
+                        detection.tracked_sizes,
+                        inp
+                    )
                 frame_times['segmentation'] = time.time() - seg_start
+
+                out.write(inp)
 
             # Total frame time
             frame_times['total'] = sum([
@@ -263,19 +273,22 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
 
         metrics_list.append(frame_metrics)
 
-    # except Exception as e:
-    #     print(f"Process {stream_id} error: {str(e)}")
-    # finally:
-    #     if 'cap' in locals():
-    #         cap.release()
-    #     nvmlShutdown()
-    #     del detection
-    #     del segmentation
-    #     torch.cuda.empty_cache()
-    #     print(f"Process {stream_id} released resources")
+    except Exception as e:
+        print(f"Process {stream_id} error: {str(e)}")
+    finally:
+        if 'cap' in locals():
+            cap.release()
+        if 'out' in locals():
+            out.release()
+        if 'detection' in locals():
+            del detection
+        if 'segmentation' in locals():
+            del segmentation
+        nvmlShutdown()
+        print(f"Process {stream_id} released resources")
 
 def main():
-    streams = ['video.mp4'] * 10
+    streams = ['video.mp4'] * 1
     output_streams = [f'output_{i}.mp4' for i in range(len(streams))]
     
     with mp.Manager() as manager:

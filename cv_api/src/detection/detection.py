@@ -6,7 +6,7 @@ import time
 class PotatoDetector:
     """A class for detecting and tracking potatoes in video frames using YOLO."""
     
-    def __init__(self, model_path, camera_id=0, task='detect', tracker_config=None, segmentation_area=None, track_ids=None, warmup_image=None):
+    def __init__(self, model_path, camera_id=0, task='detect', tracker_config=None, reset=False, segmentation_area=None, track_ids=None, warmup_image=None):
         """
         Initialize the potato detector.
         
@@ -18,7 +18,7 @@ class PotatoDetector:
             track_ids (set): Set of tracked potato IDs
         """
         self.model = YOLO(model_path, task=task)
-        self.warmup(warmup_image)
+        #self.warmup(warmup_image, warmup_frames=1)
         self.camera_id = camera_id
         self.tracker_config = tracker_config
         self.segmentation_area = segmentation_area or []
@@ -53,8 +53,8 @@ class PotatoDetector:
         
         for _ in range(warmup_frames):
             # Run both predict and track to warm up all operations
-            _ = self.model.predict(dummy_frame, imgsz=img_size, verbose=True)
-            _ = self.model.track(dummy_frame, imgsz=img_size, verbose=True, persist=False)
+            _ = self.model.predict(dummy_frame, imgsz=img_size, verbose=False)
+            _ = self.model.track(dummy_frame, imgsz=img_size, verbose=False, persist=False)
         
         warmup_time = time.time() - start_time
         print(f"Warmup completed in {warmup_time:.2f} seconds")
@@ -65,18 +65,21 @@ class PotatoDetector:
         """
         return self.model.predict(frame, imgsz=img_size, conf=conf)
 
-    def track(self, frame, frame_id=0, conf=0.6, img_size=None):
+    def track(self, frame, frame_id=0, conf=0.6, img_size=None, reset=False):
         """
         Track objects in a frame and process results.
         """
         start_tracker = time.time()
+        if reset == True:
+            #self.model.predictor.trackers[0].reset()
+            pass
         if img_size is None:
             self.result_tracking = self.model.track(
-                frame, conf=conf, tracker=self.tracker_config
+                frame, tracker=self.tracker_config, persist=True, verbose=False
             )
         else:
             self.result_tracking = self.model.track(
-                frame, imgsz=img_size, conf=conf, tracker=self.tracker_config
+                frame, imgsz=img_size, tracker=self.tracker_config, persist=True, verbose=False
             )
         tracker_time = time.time() - start_tracker
 
@@ -151,6 +154,8 @@ class PotatoDetector:
             )
             drawing_time += time.time() - start_draw
         
+        self._draw_box(frame, self.segmentation_area, 'blue')
+        
         return potato_images, potato_boxes, drawing_time
 
 
@@ -182,8 +187,8 @@ class PotatoDetector:
         """Draw ID and size text on the frame."""
     
         cv2.putText(
-            frame, f"ID: {track_id} {round(width, 2)}cm {round(height, 2)} cm ", (x, y - 10),
-            cv2.FONT_HERSHEY_SIMPLEX, 0.9, self.COLORS['white'], 2
+            frame, f"ID:{track_id} {round(width, 2)}cm {round(height, 2)}cm ", (x, y - 10),
+            cv2.FONT_HERSHEY_SIMPLEX, 0.9, self.COLORS['white'], 1
         )
 
     def draw_lines(self):

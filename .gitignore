@@ -16,3 +16,12 @@ __pycache__
 /__pycache__
 Boxes
 video.mp4
+coco8
+Datasets
+pycuda
+concat_list.txt
+output_1hour.mp4
+output_5min.mp4
+potatocheck.v5i.yolov8.zip
+yolov8n.pt
+.venv/
