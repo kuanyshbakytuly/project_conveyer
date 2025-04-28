@@ -4,7 +4,6 @@ import torch
 import time
 from pynvml import *
 import matplotlib.pyplot as plt
-import cv2
 import tensorrt as trt
 import psutil
 import os
@@ -15,8 +14,8 @@ import numpy as np
 TRT_LOGGER = trt.Logger(trt.Logger.ERROR)
 trt.init_libnvinfer_plugins(TRT_LOGGER, "")
 
-def generate_plots(metrics_list):
-    # Initialize data collection containers
+def generate_plots(metrics_list, stream_fps_list):
+    all_stream_fps = stream_fps_list
     all_fps = []
     all_cpu = []
     all_gpu = []
@@ -29,66 +28,70 @@ def generate_plots(metrics_list):
         'segmentation_drawing': 0.0
     }
 
-    # Collect data from all processes
     total_frames = 0
     for process_metrics in metrics_list:
         for frame in process_metrics:
             total_frames += 1
             
-            # Calculate FPS
             if frame['total'] > 0:
                 all_fps.append(1 / frame['total'])
             else:
                 all_fps.append(0)
             
-            # System metrics
             all_cpu.append(frame['cpu'])
             all_gpu.append(frame['gpu'])
             
-            # Timing metrics
             for key in time_stats:
                 time_stats[key] += frame.get(key, 0)
 
-    # Calculate averages
     avg_fps = np.mean(all_fps) if all_fps else 0
     avg_cpu = np.mean(all_cpu) if all_cpu else 0
     avg_gpu = np.mean(all_gpu) if all_gpu else 0
+    avg_stream_fps = np.mean(all_stream_fps) if all_stream_fps else 0
 
-    # Calculate time percentages
     total_time = sum(time_stats.values())
     time_percentages = {k: v/total_time*100 for k, v in time_stats.items()} if total_time > 0 else {}
 
-    # Create summary text
+    stream_fps_text = "\n".join([f"Stream {i}: {fps:.2f} FPS" for i, fps in enumerate(all_stream_fps)])
+    
     summary_text = f"""Performance Summary:
--------------------
-Average FPS: {avg_fps:.2f}
-Average CPU Usage: {avg_cpu:.2f}%
-Average GPU Usage: {avg_gpu:.2f}%
+        -------------------
+        Average End-to-End Stream FPS: {avg_stream_fps:.2f}
+        Individual Stream FPS:
+        {stream_fps_text}
 
-Time Distribution (% of total processing time):
-- Frame Reading: {time_percentages.get('frame_read', 0):.1f}%
-- Detection (Model): {time_percentages.get('detection_tracker', 0):.1f}%
-- Detection (Processing): {time_percentages.get('detection_processing', 0):.1f}%
-- Detection (Drawing): {time_percentages.get('detection_drawing', 0):.1f}%
-- Segmentation (Model): {time_percentages.get('segmentation', 0):.1f}%
-- Segmentation (Drawing): {time_percentages.get('segmentation_drawing', 0):.1f}%
+        Average Per-Frame FPS: {avg_fps:.2f}
+        Average CPU Usage: {avg_cpu:.2f}%
+        Average GPU Usage: {avg_gpu:.2f}%
 
-Absolute Times per Frame (ms):
-- Frame Reading: {time_stats['frame_read']/total_frames*1000:.2f}
-- Detection Model: {time_stats['detection_tracker']/total_frames*1000:.2f}
-- Detection Processing: {time_stats['detection_processing']/total_frames*1000:.2f}
-- Detection Drawing: {time_stats['detection_drawing']/total_frames*1000:.2f}
-- Segmentation Model: {time_stats['segmentation']/total_frames*1000:.2f}
-- Segmentation Drawing: {time_stats['segmentation_drawing']/total_frames*1000:.2f}
-"""
+        Time Distribution (% of total processing time):
+        - Frame Reading: {time_percentages.get('frame_read', 0):.1f}%
+        - Detection (Model): {time_percentages.get('detection_tracker', 0):.1f}%
+        - Detection (Processing): {time_percentages.get('detection_processing', 0):.1f}%
+        - Detection (Drawing): {time_percentages.get('detection_drawing', 0):.1f}%
+        - Segmentation (Model): {time_percentages.get('segmentation', 0):.1f}%
+        - Segmentation (Drawing): {time_percentages.get('segmentation_drawing', 0):.1f}%
 
-    # Print and save summary
-    print(summary_text)
-    with open('performance_summary.txt', 'w') as f:
-        f.write(summary_text)
+        Absolute Times per Frame (ms):
+        - Frame Reading: {time_stats['frame_read']/total_frames*1000:.2f}
+        - Detection Model: {time_stats['detection_tracker']/total_frames*1000:.2f}
+        - Detection Processing: {time_stats['detection_processing']/total_frames*1000:.2f}
+        - Detection Drawing: {time_stats['detection_drawing']/total_frames*1000:.2f}
+        - Segmentation Model: {time_stats['segmentation']/total_frames*1000:.2f}
+        - Segmentation Drawing: {time_stats['segmentation_drawing']/total_frames*1000:.2f}
+        """
 
-    # Create plots
+    # Update plot generation to include stream FPS
     plt.figure(figsize=(20, 15))
+    
+    # Add stream FPS plot
+    plt.subplot(3, 3, 7)
+    plt.bar(range(len(all_stream_fps)), all_stream_fps, color='cyan')
+    plt.title('End-to-End FPS per Stream')
+    plt.xlabel('Stream ID')
+    plt.ylabel('FPS')
+    plt.grid(True)
+    plt.xticks(range(len(all_stream_fps)))
     
     # Summary text
     plt.subplot(3, 3, 1)
@@ -152,22 +155,20 @@ Absolute Times per Frame (ms):
     plt.grid(True)
 
     plt.tight_layout()
-    plt.savefig('detailed_performance_analysis_20potok.png', dpi=300, bbox_inches='tight')
+    plt.savefig('detailed_performance_analysis_20potok_withoutmodels_640x360.png', dpi=300, bbox_inches='tight')
     plt.close()
 
     print("Performance plots saved as 'detailed_performance_analysis.png'")
 
-def process_stream(stream, stream_id, output_stream, metrics_list):
+def process_stream(stream, stream_id, output_stream, metrics_list, stream_fps_list):
     try:
+        print(f'Staring proces --- {stream_id}')
         import pycuda.autoinit
         torch.cuda.init()
 
         test_tensor = torch.randn(10, device='cuda')
         del test_tensor
 
-        nvmlInit()
-        handle = nvmlDeviceGetHandleByIndex(0)
-        process = psutil.Process(os.getpid())
         frame_metrics = []
 
         # Initialization code
@@ -176,12 +177,17 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
         # cm_per_pixel = 0.00999000999000999
 
         # Scaled values for 1920×1080:
-        segmentation_area = [648, 0, 1169, 1080]  # All coordinates divided by 2
-        cm_per_pixel = 0.01998  # Since pixels are now larger (half resolution), each pixel covers more cm
+        # segmentation_area = [648, 0, 1169, 1080]
+        # cm_per_pixel = 0.01998
+
+        segmentation_area = [432, 0, 779, 720]  # [x1, y1, x2, y2]
+        cm_per_pixel = 0.02997
         conf = 0.6
         tracker_config = 'bytetrack_custom.yaml'
 
+
         # Initialize models
+        print(f'Initting Detector --- process {stream_id} ')
         detection = PotatoDetector(
             model_path='Models/model_det_test/best.engine',
             camera_id=stream_id,
@@ -191,17 +197,22 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
             track_ids=set(),
             warmup_image='frame.jpg'
         )
-        
+        print(f'Initting Segmenter ---process {stream_id} ')
         segmentation = PotatoSegmentation(
-            model_path='Models/model_seg_fp32/best_yoloseg.engine',
+            model_path='Models/model_seg_fp16/best_yoloseg.engine',
             ratio=cm_per_pixel,
             warmup_image='box.jpg'
         )
+        print(f'Initting VideoCapture --- process {stream_id} ')
+        cap = ffmpegcv.VideoCaptureNV(stream, pix_fmt='bgr24', resize=(640, 360))
+        #out = ffmpegcv.VideoWriterNV(output_stream, 'h264', 25)
 
-        cap = ffmpegcv.VideoCaptureNV(stream, pix_fmt='bgr24', resize=(1920, 1080))
-        out = ffmpegcv.VideoWriterNV(output_stream, 'h264', 25)
+        print(f'Warm Up models with first frame --- process {stream_id} ')
+
+
         frame_id = 0
-
+        start_time = time.time()
+        print(f'Start processing -- process {stream_id}')
         while True:
             frame_times = {
                 'frame_read': 0.0,
@@ -216,51 +227,46 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
                 'gpu': 0.0
             }
 
-            reset_track = frame_id % 231 == 0
-
-            # Measure frame read
-            start_time = time.time()
-            ret, orig_frame = cap.read()
-            frame_times['frame_read'] = time.time() - start_time
+            s = time.time()
+            ret, frame = cap.read()
+            frame_times['frame_read'] = time.time() - s
 
             if not ret:
                 break
 
-            # Get system metrics
-            frame_times['cpu'] = process.cpu_percent()
-            gpu_util = nvmlDeviceGetUtilizationRates(handle)
-            frame_times['gpu'] = gpu_util.gpu
+            # frame_times['cpu'] = process.cpu_percent()
+            # gpu_util = nvmlDeviceGetUtilizationRates(handle)
+            # frame_times['gpu'] = gpu_util.gpu
 
             with torch.no_grad():
-                inp = orig_frame.copy()
+                frame=frame.copy()
 
-                # Detection
-                det_start = time.time()
-                track_result = detection.track(frame=inp, frame_id=frame_id, conf=conf, reset=reset_track)
-                potato_images, potato_boxes = track_result[0], track_result[1]
-                tracker_time = track_result[2]
-                processing_time = track_result[3]
-                detection_drawing_time = track_result[4]
+                # # Detection
+                # det_start = time.time()
+                # track_result = detection.track(frame=frame, frame_id=frame_id)
+                # potato_images, potato_boxes = track_result[0], track_result[1]
+                # tracker_time = track_result[2]
+                # processing_time = track_result[3]
+                # detection_drawing_time = track_result[4]
                 
-                frame_times['detection_tracker'] = tracker_time
-                frame_times['detection_processing'] = processing_time
-                frame_times['detection_drawing'] = detection_drawing_time
-                frame_times['detection'] = time.time() - det_start
+                # frame_times['detection_tracker'] = tracker_time
+                # frame_times['detection_processing'] = processing_time
+                # frame_times['detection_drawing'] = detection_drawing_time
+                # frame_times['detection'] = time.time() - det_start
 
-                # Segmentation
-                seg_start = time.time()
-                if potato_images:
-                    detection.tracked_sizes, inp = segmentation.process_batch(
-                        potato_images,
-                        potato_boxes,
-                        detection.tracked_sizes,
-                        inp
-                    )
-                frame_times['segmentation'] = time.time() - seg_start
+                # # Segmentation
+                # seg_start = time.time()
+                # if potato_images:
+                #     detection.tracked_sizes, frame = segmentation.process_batch(
+                #         potato_images,
+                #         potato_boxes,
+                #         detection.tracked_sizes,
+                #         frame
+                #     )
+                # frame_times['segmentation'] = time.time() - seg_start
 
-                out.write(inp)
+                # #out.write(frame)
 
-            # Total frame time
             frame_times['total'] = sum([
                 frame_times['frame_read'],
                 frame_times['detection'],
@@ -269,8 +275,19 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
             ])
 
             frame_metrics.append(frame_times)
+
+            # if frame_id == 0:
+            #     ignore_first_it = time.time()-start_time
             frame_id += 1
 
+
+        end_time = time.time()
+        total_time = end_time - start_time
+        print(f'{total_time} TOTAL TIME')
+        print(frame_id)
+        stream_fps = frame_id / total_time if total_time > 0 else 0
+        print(stream_fps)
+        stream_fps_list.append(stream_fps)
         metrics_list.append(frame_metrics)
 
     except Exception as e:
@@ -278,35 +295,34 @@ def process_stream(stream, stream_id, output_stream, metrics_list):
     finally:
         if 'cap' in locals():
             cap.release()
-        if 'out' in locals():
-            out.release()
+        # if 'out' in locals():
+        #     out.release()
         if 'detection' in locals():
             del detection
         if 'segmentation' in locals():
             del segmentation
-        nvmlShutdown()
         print(f"Process {stream_id} released resources")
 
 def main():
-    streams = ['video.mp4'] * 1
+    streams = ['video.mp4'] * 20
     output_streams = [f'output_{i}.mp4' for i in range(len(streams))]
     
     with mp.Manager() as manager:
         metrics_list = manager.list()
+        stream_fps_list = manager.list()
         processes = []
         
         for stream_id, source in enumerate(streams):
             p = mp.Process(
                 target=process_stream,
-                args=(source, stream_id, output_streams[stream_id], metrics_list)
+                args=(source, stream_id, output_streams[stream_id], metrics_list, stream_fps_list)
             )
             p.start()
             processes.append(p)
         
         for p in processes:
             p.join()
-        
-        generate_plots(list(metrics_list))
+        generate_plots(list(metrics_list), stream_fps_list)
 
 if __name__ == '__main__':
     if not torch.cuda.is_available():

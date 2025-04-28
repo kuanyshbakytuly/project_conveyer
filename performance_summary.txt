@@ -1,21 +1,22 @@
 Performance Summary:
--------------------
-Average FPS: 59.42
-Average CPU Usage: 74.81%
-Average GPU Usage: 11.61%
+        -------------------
+        Average FPS: 39.50
+        Average CPU Usage: 60.07%
+        Average GPU Usage: 38.01%
 
-Time Distribution (% of total processing time):
-- Frame Reading: 28.2%
-- Detection (Model): 45.6%
-- Detection (Processing): 6.0%
-- Detection (Drawing): 4.8%
-- Segmentation (Model): 15.3%
-- Segmentation (Drawing): 0.0%
+        Time Distribution (% of total processing time):
+        - Frame Reading: 44.6%
+        - Detection (Model): 32.9%
+        - Detection (Processing): 3.1%
+        - Detection (Drawing): 2.4%
+        - Segmentation (Model): 16.9%
+        - Segmentation (Drawing): 0.0%
 
-Absolute Times per Frame (ms):
-- Frame Reading: 5.81
-- Detection Model: 9.38
-- Detection Processing: 1.24
-- Detection Drawing: 0.99
-- Segmentation Model: 3.15
-- Segmentation Drawing: 0.00
+        Absolute Times per Frame (ms):
+        - Frame Reading: 38.96
+        - Detection Model: 28.73
+        - Detection Processing: 2.72
+        - Detection Drawing: 2.13
+        - Segmentation Model: 14.76
+        - Segmentation Drawing: 0.00
+        

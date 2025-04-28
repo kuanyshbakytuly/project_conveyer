@@ -16,7 +16,7 @@ class PotatoSegmentation:
             cm_per_pixel (float): Conversion factor from pixels to centimeters
         """
         self.model = YOLO(model_path, task='segment')
-        self.warmup(warmup_image, warmup_frames=1)
+        #self.warmup(warmup_image, warmup_frames=1)
         self.ratio = ratio
         self.phase_times = {
             'model_seg': [],
@@ -61,7 +61,7 @@ class PotatoSegmentation:
 
         # Run segmentation
         start_seg = time.time()
-        results_seg = self.model.predict(potato_images, imgsz=320)
+        results_seg = self.model.predict(potato_images, imgsz=320, verbose=False)
         self.phase_times['model_seg'].append(time.time() - start_seg)
 
         # Process results

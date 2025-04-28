@@ -25,3 +25,7 @@ output_5min.mp4
 potatocheck.v5i.yolov8.zip
 yolov8n.pt
 .venv/
+PotatoesSegmentation.v2i.yolov8.zip
+Dataset_seg
+Segment_Dataset
+runs
