@@ -4,13 +4,10 @@ import threading
 from multiprocessing import Pool
 
 def read_frames(stream):
-    # Initialize capture first (this is part of the measured time)
-    cap = ffmpegcv.toCUDA(
-        ffmpegcv.VideoCaptureNV(stream, pix_fmt='nv12', resize=(640, 640)), 
-        tensor_format='chw'
-    )
+
+    path, gpu_id = stream
+    cap = ffmpegcv.VideoCaptureNV(path, pix_fmt='bgr24', resize=(960, 540), gpu=gpu_id)
     
-    # Start timing AFTER initialization
     start_time = time.time()
     count = 0
     while True:
@@ -20,7 +17,7 @@ def read_frames(stream):
         count += 1
     end_time = time.time()
     cap.release()
-    return count, start_time, end_time  # Return timing per worker
+    return count, start_time, end_time
 
 def run_multithreaded(streams):
     results = []
@@ -30,17 +27,14 @@ def run_multithreaded(streams):
         result = read_frames(stream)
         results.append(result)
     
-    # Start all threads
     for stream in streams:
         t = threading.Thread(target=worker, args=(stream,))
         t.start()
         threads.append(t)
     
-    # Wait for completion
     for t in threads:
         t.join()
     
-    # Calculate true parallel duration
     counts, starts, ends = zip(*results)
     total_frames = sum(counts)
     total_start = min(starts)
@@ -53,7 +47,6 @@ def run_multiprocessed(streams):
     with Pool(len(streams)) as pool:
         results = pool.map(read_frames, streams)
     
-    # Calculate true parallel duration
     counts, starts, ends = zip(*results)
     total_frames = sum(counts)
     total_start = min(starts)
@@ -63,7 +56,7 @@ def run_multiprocessed(streams):
     print(f"Multiprocessed FPS: {fps:.2f}")
 
 if __name__ == '__main__':
-    streams = ['video.mp4'] * 20  # Replace with actual paths
+    streams = [('video.mov', i%2) for i in range(20)]
     
     print("Testing multithreading...")
     run_multithreaded(streams)

@@ -1,7 +1,7 @@
 pip install torch==2.8.0.dev20250408+cu128 torchvision==0.22.0.dev20250408+cu128 torchaudio==2.6.0.dev20250408+cu128 --index-url https://download.pytorch.org/whl/nightly/cu128
 
 
-pip install onnx==1.12.0 onnxslim onnxruntime-gpu
+pip install onnx onnxslim onnxruntime-gpu
 tensorrt
 ffmpegcv[cuda]
 

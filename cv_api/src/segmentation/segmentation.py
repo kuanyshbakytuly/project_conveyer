@@ -7,7 +7,7 @@ from ultralytics import YOLO
 class PotatoSegmentation:
     """Handles potato segmentation and size measurement using YOLO segmentation model."""
     
-    def __init__(self, model_path: str, ratio: float = 0.1, warmup_image=None):
+    def __init__(self, model_path: str, device=0, ratio: float = 0.1, warmup_image=None):
         """
         Initialize the segmentation processor.
         
@@ -16,6 +16,7 @@ class PotatoSegmentation:
             cm_per_pixel (float): Conversion factor from pixels to centimeters
         """
         self.model = YOLO(model_path, task='segment')
+        self.dev = device
         #self.warmup(warmup_image, warmup_frames=1)
         self.ratio = ratio
         self.phase_times = {
@@ -61,7 +62,7 @@ class PotatoSegmentation:
 
         # Run segmentation
         start_seg = time.time()
-        results_seg = self.model.predict(potato_images, imgsz=320, verbose=False)
+        results_seg = self.model.predict(potato_images, imgsz=160, verbose=False, device=self.dev)
         self.phase_times['model_seg'].append(time.time() - start_seg)
 
         # Process results

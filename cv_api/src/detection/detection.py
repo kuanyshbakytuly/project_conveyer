@@ -6,7 +6,7 @@ import time
 class PotatoDetector:
     """A class for detecting and tracking potatoes in video frames using YOLO."""
     
-    def __init__(self, model_path, camera_id=0, task='detect', tracker_config=None, reset=False, segmentation_area=None, track_ids=None, warmup_image=None):
+    def __init__(self, model_path, camera_id=0, device=0, task='detect', tracker_config=None, reset=False, segmentation_area=None, track_ids=None, warmup_image=None):
         """
         Initialize the potato detector.
         
@@ -18,6 +18,7 @@ class PotatoDetector:
             track_ids (set): Set of tracked potato IDs
         """
         self.model = YOLO(model_path, task=task)
+        self.dev = device
         #self.warmup(warmup_image, warmup_frames=1)
         self.camera_id = camera_id
         self.tracker_config = tracker_config
@@ -75,11 +76,11 @@ class PotatoDetector:
             pass
         if img_size is None:
             self.result_tracking = self.model.track(
-                frame, tracker=self.tracker_config, persist=True, verbose=False
+                frame, tracker=self.tracker_config, persist=True, verbose=False, device=self.dev
             )
         else:
             self.result_tracking = self.model.track(
-                frame, imgsz=img_size, tracker=self.tracker_config, persist=True, verbose=False
+                frame, imgsz=img_size, tracker=self.tracker_config, persist=True, verbose=False,  device=self.dev
             )
         tracker_time = time.time() - start_tracker
 

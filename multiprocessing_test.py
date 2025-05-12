@@ -10,6 +10,7 @@ import os
 from cv_api.src.detection.detection import PotatoDetector
 from cv_api.src.segmentation.segmentation import PotatoSegmentation
 import numpy as np
+import glob
 
 TRT_LOGGER = trt.Logger(trt.Logger.ERROR)
 trt.init_libnvinfer_plugins(TRT_LOGGER, "")
@@ -155,7 +156,7 @@ def generate_plots(metrics_list, stream_fps_list):
     plt.grid(True)
 
     plt.tight_layout()
-    plt.savefig('detailed_performance_analysis_20potok_withoutmodels_640x360.png', dpi=300, bbox_inches='tight')
+    plt.savefig('detailed_performance_analysis.png', dpi=300, bbox_inches='tight')
     plt.close()
 
     print("Performance plots saved as 'detailed_performance_analysis.png'")
@@ -180,31 +181,39 @@ def process_stream(stream, stream_id, output_stream, metrics_list, stream_fps_li
         # segmentation_area = [648, 0, 1169, 1080]
         # cm_per_pixel = 0.01998
 
-        segmentation_area = [432, 0, 779, 720]  # [x1, y1, x2, y2]
-        cm_per_pixel = 0.02997
+        # segmentation_area = [432, 0, 779, 720]  # [x1, y1, x2, y2]
+        # cm_per_pixel = 0.02997
+
+        # Scaled values for 960×540:
+        segmentation_area = [324, 0, 585, 539]  # [x1, y1, x2, y2]
+        cm_per_pixel = 0.03996003996003996
+
         conf = 0.6
         tracker_config = 'bytetrack_custom.yaml'
+        path, gpu_id = stream
 
 
         # Initialize models
         print(f'Initting Detector --- process {stream_id} ')
         detection = PotatoDetector(
-            model_path='Models/model_det_test/best.engine',
+            model_path=f'Models/model_det_fp16_{gpu_id}/best.engine',
             camera_id=stream_id,
             task='detect',
             tracker_config=tracker_config,
             segmentation_area=segmentation_area,
             track_ids=set(),
-            warmup_image='frame.jpg'
+            warmup_image='frame.jpg',
+            device=gpu_id
         )
         print(f'Initting Segmenter ---process {stream_id} ')
         segmentation = PotatoSegmentation(
-            model_path='Models/model_seg_fp16/best_yoloseg.engine',
+            model_path=f'Models/model_seg_fp16_{gpu_id}/best_yoloseg.engine',
             ratio=cm_per_pixel,
-            warmup_image='box.jpg'
+            warmup_image='box.jpg',
+            device=gpu_id
         )
         print(f'Initting VideoCapture --- process {stream_id} ')
-        cap = ffmpegcv.VideoCaptureNV(stream, pix_fmt='bgr24', resize=(640, 360))
+        cap = ffmpegcv.VideoCaptureNV(path, pix_fmt='bgr24', resize=(960, 540), gpu=gpu_id)
         #out = ffmpegcv.VideoWriterNV(output_stream, 'h264', 25)
 
         print(f'Warm Up models with first frame --- process {stream_id} ')
@@ -241,29 +250,29 @@ def process_stream(stream, stream_id, output_stream, metrics_list, stream_fps_li
             with torch.no_grad():
                 frame=frame.copy()
 
-                # # Detection
-                # det_start = time.time()
-                # track_result = detection.track(frame=frame, frame_id=frame_id)
-                # potato_images, potato_boxes = track_result[0], track_result[1]
-                # tracker_time = track_result[2]
-                # processing_time = track_result[3]
-                # detection_drawing_time = track_result[4]
+                # Detection
+                det_start = time.time()
+                track_result = detection.track(frame=frame, frame_id=frame_id)
+                potato_images, potato_boxes = track_result[0], track_result[1]
+                tracker_time = track_result[2]
+                processing_time = track_result[3]
+                detection_drawing_time = track_result[4]
                 
-                # frame_times['detection_tracker'] = tracker_time
-                # frame_times['detection_processing'] = processing_time
-                # frame_times['detection_drawing'] = detection_drawing_time
-                # frame_times['detection'] = time.time() - det_start
+                frame_times['detection_tracker'] = tracker_time
+                frame_times['detection_processing'] = processing_time
+                frame_times['detection_drawing'] = detection_drawing_time
+                frame_times['detection'] = time.time() - det_start
 
-                # # Segmentation
-                # seg_start = time.time()
-                # if potato_images:
-                #     detection.tracked_sizes, frame = segmentation.process_batch(
-                #         potato_images,
-                #         potato_boxes,
-                #         detection.tracked_sizes,
-                #         frame
-                #     )
-                # frame_times['segmentation'] = time.time() - seg_start
+                # Segmentation
+                seg_start = time.time()
+                if potato_images:
+                    detection.tracked_sizes, frame = segmentation.process_batch(
+                        potato_images,
+                        potato_boxes,
+                        detection.tracked_sizes,
+                        frame
+                    )
+                frame_times['segmentation'] = time.time() - seg_start
 
                 # #out.write(frame)
 
@@ -276,17 +285,15 @@ def process_stream(stream, stream_id, output_stream, metrics_list, stream_fps_li
 
             frame_metrics.append(frame_times)
 
-            # if frame_id == 0:
-            #     ignore_first_it = time.time()-start_time
+            if frame_id == 0:
+                ignore_first_it = time.time()-start_time
             frame_id += 1
 
 
         end_time = time.time()
-        total_time = end_time - start_time
-        print(f'{total_time} TOTAL TIME')
-        print(frame_id)
+        total_time = end_time - start_time - ignore_first_it
         stream_fps = frame_id / total_time if total_time > 0 else 0
-        print(stream_fps)
+        print(f'TOTAL TIME: {round(total_time, 2)} FPS: {round(stream_fps, 2)}')
         stream_fps_list.append(stream_fps)
         metrics_list.append(frame_metrics)
 
@@ -304,7 +311,8 @@ def process_stream(stream, stream_id, output_stream, metrics_list, stream_fps_li
         print(f"Process {stream_id} released resources")
 
 def main():
-    streams = ['video.mp4'] * 20
+    videos = glob.glob('Videos/*')
+    streams = [(videos[i], i%2) for i in range(16)]
     output_streams = [f'output_{i}.mp4' for i in range(len(streams))]
     
     with mp.Manager() as manager:
