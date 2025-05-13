@@ -6,7 +6,7 @@ from multiprocessing import Pool
 def read_frames(stream):
 
     path, gpu_id = stream
-    cap = ffmpegcv.VideoCaptureNV(path, pix_fmt='bgr24', resize=(960, 540), gpu=gpu_id)
+    cap = ffmpegcv.VideoCaptureNV(path, pix_fmt='bgr24', resize=(1280, 720), gpu=gpu_id)
     
     start_time = time.time()
     count = 0
