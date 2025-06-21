@@ -1,0 +1,296 @@
+# RTSP Camera Setup Guide
+
+This guide explains how to configure the video processing pipeline for RTSP IP cameras instead of video files.
+
+## Quick Start
+
+1. **Copy the RTSP environment template:**
+   ```bash
+   cp .env.rtsp .env
+   ```
+
+2. **Edit `.env` with your camera URLs:**
+   ```bash
+   # Example for HIKVision cameras
+   RTSP_URL_0=rtsp://admin:yourpassword@192.168.1.100:554/Streaming/Channels/101
+   RTSP_URL_1=rtsp://admin:yourpassword@192.168.1.101:554/Streaming/Channels/101
+   # ... add up to 20 cameras
+   ```
+
+3. **Run with Docker:**
+   ```bash
+   docker-compose -f docker-compose.rtsp.yml up -d
+   ```
+
+## RTSP URL Formats
+
+### Common Camera Brands
+
+**HIKVision:**
+```
+Main Stream: rtsp://admin:password@IP:554/Streaming/Channels/101
+Sub Stream:  rtsp://admin:password@IP:554/Streaming/Channels/102
+```
+
+**Dahua:**
+```
+Main Stream: rtsp://admin:password@IP:554/cam/realmonitor?channel=1&subtype=0
+Sub Stream:  rtsp://admin:password@IP:554/cam/realmonitor?channel=1&subtype=1
+```
+
+**Axis:**
+```
+rtsp://user:password@IP/axis-media/media.amp
+```
+
+**Foscam:**
+```
+rtsp://user:password@IP:88/videoMain
+```
+
+**Generic ONVIF:**
+```
+rtsp://user:password@IP:554/stream1
+```
+
+## Configuration Options
+
+### Essential Settings
+
+| Variable | Description | Default | Example |
+|----------|-------------|---------|---------|
+| `RTSP_URL_0` to `RTSP_URL_19` | Individual camera URLs | - | `rtsp://admin:pass@192.168.1.100:554/stream` |
+| `NUM_STREAMS` | Number of cameras to process | 20 | 10 |
+| `TARGET_FPS` | Output frame rate | 25 | 30 |
+| `FRAME_SKIP` | Process every Nth frame | 2 | 3 |
+
+### Performance Tuning
+
+| Variable | Description | Impact |
+|----------|-------------|--------|
+| `RTSP_NO_BUFFER` | Disable buffering | Lower latency, may drop frames |
+| `RTSP_TRANSPORT` | tcp or udp | TCP: reliable, UDP: lower latency |
+| `MP_QUEUE_SIZE` | Queue size | Smaller = lower latency |
+| `JPEG_QUALITY` | JPEG compression | Lower = less bandwidth |
+
+### Network Configuration
+
+**Option 1: Host Network Mode (Recommended for RTSP)**
+```yaml
+network_mode: host
+```
+- Direct access to camera network
+- Better for multicast streams
+- No port mapping needed
+
+**Option 2: Bridge Network Mode**
+```yaml
+networks:
+  - rtsp-network
+ports:
+  - "8000:8000"
+```
+- More isolated
+- Requires proper routing to cameras
+
+## Testing Your Setup
+
+### 1. Test Individual Camera Connection
+
+```python
+# test_rtsp.py
+import cv2
+
+rtsp_url = "rtsp://admin:password@192.168.1.100:554/Streaming/Channels/101"
+cap = cv2.VideoCapture(rtsp_url, cv2.CAP_FFMPEG)
+
+if cap.isOpened():
+    print("✓ Connection successful")
+    ret, frame = cap.read()
+    if ret:
+        print(f"✓ Frame size: {frame.shape}")
+else:
+    print("✗ Connection failed")
+
+cap.release()
+```
+
+### 2. Test with ffmpegcv (Low Latency)
+
+```python
+import ffmpegcv
+
+# For minimum latency
+rtsp_url = "rtsp://admin:password@192.168.1.100:554/Streaming/Channels/101"
+cap = ffmpegcv.ReadLiveLast(ffmpegcv.VideoCaptureStreamRT, rtsp_url)
+
+while True:
+    ret, frame = cap.read()
+    if ret:
+        print(f"Frame received: {frame.shape}")
+    else:
+        print("Connection lost")
+        break
+```
+
+### 3. Check System Status
+
+```bash
+# View logs
+docker-compose -f docker-compose.rtsp.yml logs -f
+
+# Check health
+curl http://localhost:8000/health
+
+# View stream info
+curl http://localhost:8000/api/streams
+```
+
+## Troubleshooting
+
+### Connection Issues
+
+**Problem: "Cannot open RTSP stream"**
+- Check camera IP and credentials
+- Verify network connectivity: `ping camera_ip`
+- Test with VLC: `vlc rtsp://user:pass@ip:554/stream`
+
+**Problem: "Connection times out"**
+- Increase timeout: `RTSP_TIMEOUT=30`
+- Check firewall rules
+- Try TCP transport: `RTSP_TRANSPORT=tcp`
+
+### Performance Issues
+
+**Problem: "High latency"**
+- Enable no-buffer mode: `RTSP_NO_BUFFER=true`
+- Use sub-stream instead of main stream
+- Reduce resolution or quality
+
+**Problem: "Dropped frames"**
+- Increase frame skip: `FRAME_SKIP=3`
+- Reduce number of streams
+- Check network bandwidth
+
+### Network Configuration
+
+**For cameras on different subnet:**
+```bash
+# Add route (example)
+ip route add 192.168.2.0/24 via 192.168.1.1
+
+# Or use Docker network options
+docker network create \
+  --driver=bridge \
+  --subnet=172.20.0.0/16 \
+  --ip-range=172.20.240.0/20 \
+  --gateway=172.20.0.1 \
+  rtsp-network
+```
+
+## Advanced Configuration
+
+### Multiple Camera Types
+
+```bash
+# Mix different camera brands
+RTSP_URL_0=rtsp://admin:pass@192.168.1.100:554/Streaming/Channels/101  # HIK
+RTSP_URL_1=rtsp://admin:pass@192.168.1.101:554/cam/realmonitor?channel=1  # Dahua
+RTSP_URL_2=rtsp://user:pass@192.168.1.102/axis-media/media.amp  # Axis
+```
+
+### Sub-streams for Better Performance
+
+```bash
+# Use sub-streams (lower resolution) for processing
+RTSP_URL_0=rtsp://admin:pass@192.168.1.100:554/Streaming/Channels/102  # HIK sub
+RTSP_URL_1=rtsp://admin:pass@192.168.1.101:554/cam/realmonitor?channel=1&subtype=1  # Dahua sub
+```
+
+### Custom FFmpeg Options
+
+```python
+# In processor.py, modify open_rtsp_stream():
+cap = ffmpegcv.VideoCaptureStreamRT(
+    stream_url,
+    ffmpeg_options={
+        'rtsp_transport': 'tcp',
+        'timeout': '5000000',
+        'max_delay': '500000',
+        'reorder_queue_size': '16'
+    }
+)
+```
+
+## Security Best Practices
+
+1. **Use Environment Variables for Credentials**
+   ```bash
+   CAMERA_USER=admin
+   CAMERA_PASS=secure_password
+   RTSP_URL_0=rtsp://${CAMERA_USER}:${CAMERA_PASS}@192.168.1.100:554/stream
+   ```
+
+2. **Restrict Network Access**
+   ```yaml
+   # docker-compose.rtsp.yml
+   networks:
+     camera-network:
+       internal: true
+   ```
+
+3. **Use Secrets Management**
+   ```yaml
+   secrets:
+     camera_passwords:
+       file: ./secrets/camera_passwords.txt
+   ```
+
+## Monitoring
+
+### Prometheus Metrics
+
+Add to your Prometheus configuration:
+```yaml
+- job_name: 'rtsp-streams'
+  static_configs:
+    - targets: ['localhost:8000']
+  metrics_path: '/metrics'
+```
+
+### Stream Health Dashboard
+
+Access the web interface:
+- http://localhost:8000 - Live stream viewer
+- http://localhost:8000/health - Health status
+- http://localhost:8000/api/streams - Stream information
+
+## Example Configurations
+
+### Small Setup (5 cameras)
+```env
+NUM_STREAMS=5
+FRAME_SKIP=1
+TARGET_FPS=30
+MP_QUEUE_SIZE=5
+```
+
+### Large Setup (20 cameras)
+```env
+NUM_STREAMS=20
+FRAME_SKIP=3
+TARGET_FPS=15
+MP_QUEUE_SIZE=2
+RTSP_NO_BUFFER=true
+```
+
+### Mixed Resolution Setup
+```env
+# High-res important cameras
+RTSP_URL_0=rtsp://admin:pass@192.168.1.100:554/Streaming/Channels/101
+RTSP_URL_1=rtsp://admin:pass@192.168.1.101:554/Streaming/Channels/101
+
+# Low-res monitoring cameras
+RTSP_URL_2=rtsp://admin:pass@192.168.1.102:554/Streaming/Channels/102
+RTSP_URL_3=rtsp://admin:pass@192.168.1.103:554/Streaming/Channels/102
+```

@@ -1,0 +1,140 @@
+version: '3.8'
+
+services:
+  rtsp-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rtsp-video-processor:latest
+    container_name: rtsp-video-processor
+    restart: unless-stopped
+    
+    # GPU configuration
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu, video, compute, utility]
+    
+    # Network mode for RTSP access
+    network_mode: host  # Required for multicast RTSP streams
+    
+    # Alternative: Use bridge mode with specific network config
+    # networks:
+    #   - rtsp-network
+    
+    # Environment variables for RTSP cameras
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+      - CUDA_VISIBLE_DEVICES=0,1
+      - TZ=UTC
+      
+      # RTSP Camera URLs (replace with your actual camera URLs)
+      - RTSP_URL_0=rtsp://admin:password@192.168.1.100:554/Streaming/Channels/101
+      - RTSP_URL_1=rtsp://admin:password@192.168.1.101:554/Streaming/Channels/101
+      - RTSP_URL_2=rtsp://admin:password@192.168.1.102:554/Streaming/Channels/101
+      - RTSP_URL_3=rtsp://admin:password@192.168.1.103:554/Streaming/Channels/101
+      - RTSP_URL_4=rtsp://admin:password@192.168.1.104:554/Streaming/Channels/101
+      - RTSP_URL_5=rtsp://admin:password@192.168.1.105:554/Streaming/Channels/101
+      - RTSP_URL_6=rtsp://admin:password@192.168.1.106:554/Streaming/Channels/101
+      - RTSP_URL_7=rtsp://admin:password@192.168.1.107:554/Streaming/Channels/101
+      - RTSP_URL_8=rtsp://admin:password@192.168.1.108:554/Streaming/Channels/101
+      - RTSP_URL_9=rtsp://admin:password@192.168.1.109:554/Streaming/Channels/101
+      - RTSP_URL_10=rtsp://admin:password@192.168.1.110:554/Streaming/Channels/101
+      - RTSP_URL_11=rtsp://admin:password@192.168.1.111:554/Streaming/Channels/101
+      - RTSP_URL_12=rtsp://admin:password@192.168.1.112:554/Streaming/Channels/101
+      - RTSP_URL_13=rtsp://admin:password@192.168.1.113:554/Streaming/Channels/101
+      - RTSP_URL_14=rtsp://admin:password@192.168.1.114:554/Streaming/Channels/101
+      - RTSP_URL_15=rtsp://admin:password@192.168.1.115:554/Streaming/Channels/101
+      - RTSP_URL_16=rtsp://admin:password@192.168.1.116:554/Streaming/Channels/101
+      - RTSP_URL_17=rtsp://admin:password@192.168.1.117:554/Streaming/Channels/101
+      - RTSP_URL_18=rtsp://admin:password@192.168.1.118:554/Streaming/Channels/101
+      - RTSP_URL_19=rtsp://admin:password@192.168.1.119:554/Streaming/Channels/101
+      
+      # Stream configuration
+      - NUM_STREAMS=20
+      - TARGET_FPS=25
+      - FRAME_SKIP=2
+      - JPEG_QUALITY=80
+      
+      # RTSP specific settings
+      - RTSP_NO_BUFFER=false    # Set to true for minimum latency
+      - RTSP_TRANSPORT=tcp      # tcp or udp
+      - RTSP_TIMEOUT=10         # Connection timeout
+      
+      # Performance tuning
+      - LOG_LEVEL=info
+      - MP_QUEUE_SIZE=3         # Smaller for real-time
+      - ASYNC_QUEUE_SIZE=3
+    
+    # Port mapping (not needed with host network mode)
+    # ports:
+    #   - "8000:8000"
+    
+    # Volume mounting
+    volumes:
+      # Mount models
+      - ./Models:/app/Models:ro
+      # Mount configuration files
+      - ./config.py:/app/config.py:ro
+      - ./bytetrack_custom.yaml:/app/bytetrack_custom.yaml:ro
+      # Mount logs
+      - ./logs:/app/logs:rw
+      # Mount custom cv_api module
+      # - ./cv_api:/app/cv_api:ro
+    
+    # Shared memory for PyTorch
+    shm_size: '8gb'
+    
+    # Resource limits
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      stack:
+        soft: 67108864
+        hard: 67108864
+    
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: NGINX for external access (when using bridge network)
+  nginx:
+    image: nginx:alpine
+    container_name: rtsp-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-rtsp.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - rtsp-processor
+    profiles:
+      - external
+    networks:
+      - rtsp-network
+
+# Networks (use if not using host mode)
+networks:
+  rtsp-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

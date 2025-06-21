@@ -1,0 +1,167 @@
+# RTSP Camera Support - Implementation Summary
+
+## Overview
+
+The video processing pipeline has been updated to support real-time RTSP camera streams instead of just video files. This enables processing of live IP camera feeds with low latency.
+
+## Key Changes
+
+### 1. **Processor Updates** (`processor.py`)
+
+- **Dynamic Stream Handling**: Automatically detects RTSP, HTTP, or file sources
+- **Low Latency Modes**:
+  - `VideoCaptureStreamRT`: RTSP with small buffer
+  - `ReadLiveLast`: No buffer mode for minimum latency
+- **Automatic Reconnection**: Handles network interruptions gracefully
+- **Per-Stream Configuration**: Each camera can have different settings
+
+### 2. **Configuration System** (`config.py`)
+
+- **RTSP URL Management**:
+  - Individual URLs: `RTSP_URL_0`, `RTSP_URL_1`, etc.
+  - Comma-separated list: `RTSP_URLS`
+  - Support for up to 100 cameras
+- **Stream-Specific Settings**:
+  - `RTSP_NO_BUFFER`: Enable/disable buffering
+  - `RTSP_TRANSPORT`: TCP or UDP transport
+  - `RTSP_TIMEOUT`: Connection timeout
+
+### 3. **Backend Enhancements** (`backend.py`)
+
+- **Stream Status Tracking**: Monitor each camera's connection status
+- **Dynamic Stream Count**: Automatically adjusts to configured cameras
+- **API Endpoints**:
+  - `/api/streams`: Get stream information
+  - `/health`: Enhanced health checking
+- **Improved Web UI**: Shows connection status and "No Signal" placeholders
+
+### 4. **Docker Support**
+
+- **Network Modes**:
+  - Host mode: Direct camera access (recommended)
+  - Bridge mode: More isolated setup
+- **RTSP-Specific Compose**: `docker-compose.rtsp.yml`
+- **Environment File Support**: Easy configuration management
+
+### 5. **Testing & Setup Tools**
+
+- **Connection Tester** (`test_rtsp_cameras.py`):
+  - Tests OpenCV and ffmpegcv methods
+  - Parallel testing support
+  - Detailed diagnostics
+- **Setup Script** (`setup_rtsp.sh`):
+  - Interactive camera configuration
+  - Automatic testing
+  - Docker setup generation
+
+## Quick Start Guide
+
+### 1. Configure Cameras
+
+```bash
+# Copy template
+cp .env.rtsp .env
+
+# Edit with your cameras
+vim .env
+```
+
+### 2. Test Connections
+
+```bash
+# Test all cameras
+python test_rtsp_cameras.py
+
+# Test specific cameras
+python test_rtsp_cameras.py --cameras 0,1,2
+
+# Test single URL
+python test_rtsp_cameras.py --url rtsp://admin:pass@192.168.1.100:554/stream
+```
+
+### 3. Run with Docker
+
+```bash
+# Using Makefile
+make rtsp
+
+# Or directly
+docker-compose -f docker-compose.rtsp.yml up -d
+```
+
+### 4. Interactive Setup
+
+```bash
+# Run setup wizard
+./setup_rtsp.sh
+
+# Or quick setup
+make rtsp-setup
+```
+
+## Supported Camera Formats
+
+### HIKVision
+```
+Main: rtsp://admin:password@IP:554/Streaming/Channels/101
+Sub:  rtsp://admin:password@IP:554/Streaming/Channels/102
+```
+
+### Dahua
+```
+Main: rtsp://admin:password@IP:554/cam/realmonitor?channel=1&subtype=0
+Sub:  rtsp://admin:password@IP:554/cam/realmonitor?channel=1&subtype=1
+```
+
+### Generic ONVIF
+```
+rtsp://user:password@IP:554/stream1
+```
+
+## Performance Optimization
+
+### For Low Latency
+- Enable no-buffer mode: `RTSP_NO_BUFFER=true`
+- Use UDP transport: `RTSP_TRANSPORT=udp`
+- Reduce queue sizes: `MP_QUEUE_SIZE=2`
+
+### For Reliability
+- Use TCP transport: `RTSP_TRANSPORT=tcp`
+- Increase timeout: `RTSP_TIMEOUT=30`
+- Enable reconnection (automatic)
+
+### For Many Cameras
+- Use sub-streams (lower resolution)
+- Increase frame skip: `FRAME_SKIP=3`
+- Distribute across multiple GPUs
+
+## Monitoring
+
+- Web UI: http://localhost:8000
+- API Status: http://localhost:8000/api/streams
+- Health Check: http://localhost:8000/health
+- Logs: `docker-compose -f docker-compose.rtsp.yml logs -f`
+
+## Troubleshooting
+
+### Connection Issues
+- Verify camera credentials and network access
+- Test with VLC first
+- Check firewall rules
+- Try different transport modes
+
+### Performance Issues
+- Use sub-streams instead of main streams
+- Reduce number of concurrent streams
+- Check network bandwidth
+- Monitor GPU usage
+
+## Architecture Benefits
+
+1. **Scalable**: Handles 1-100+ cameras
+2. **Resilient**: Automatic reconnection
+3. **Flexible**: Multiple connection methods
+4. **Efficient**: GPU acceleration maintained
+5. **Real-time**: Low latency modes available
+
+The implementation maintains all original features while adding comprehensive RTSP support for production IP camera deployments.

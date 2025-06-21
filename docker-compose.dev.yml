@@ -1,0 +1,52 @@
+# Simplified Docker Compose for Development
+version: '3.8'
+
+services:
+  video-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: video-processor:dev
+    container_name: video-processor-dev
+    
+    # GPU support
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    
+    # Basic environment
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - VIDEO_PATH=/app/data/video.mov
+      - NUM_STREAMS=4  # Reduced for development
+      - TARGET_FPS=25
+      - LOG_LEVEL=debug  # More verbose for development
+    
+    # Port mapping
+    ports:
+      - "8000:8000"
+    
+    # Volume mounting with hot reload
+    volumes:
+      # Mount source code for development
+      - ./backend.py:/app/backend.py:ro
+      - ./processor.py:/app/processor.py:ro
+      - ./config.py:/app/config.py:ro
+      # Mount data and models
+      - ./data:/app/data:ro
+      - ./Models:/app/Models:ro
+      # Logs with write access
+      - ./logs:/app/logs:rw
+    
+    # Shared memory for PyTorch
+    shm_size: '4gb'
+    
+    # Auto-restart on failure
+    restart: unless-stopped
+    
+    # Development command (with auto-reload)
+    command: ["python", "-m", "uvicorn", "backend:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

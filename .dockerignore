@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# Docker
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+
+# Project specific
+logs/
+*.log
+*.mp4
+*.mov
+*.avi
+output_*/
+detailed_performance_analysis.png
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Model files (if large)
+# Uncomment if models are downloaded separately
+# Models/
+
+# Data files (mount as volume instead)
+data/
